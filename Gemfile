@@ -35,3 +35,4 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 gem "webrick", "~> 1.7"
 gem 'jekyll-include-cache'
 gem "minimal-mistakes-jekyll"
+gem "jekyll-remote-theme"
