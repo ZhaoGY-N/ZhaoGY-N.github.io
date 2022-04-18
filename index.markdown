@@ -8,6 +8,8 @@ layout: home
 # my test title 1
 ## export http_proxy=http://127.0.0.1:12333
 
+# the double title proble is still here 
+
 > site looks like this
 
 - here is the list
