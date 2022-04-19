@@ -4,21 +4,20 @@
 
 layout: home
 author_profile: true
+title: "About me"
 ---
 
-## export http_proxy=http://127.0.0.1:12333
+Undergraduate in [School of Electronics And Information](https://dianzi.nwpu.edu.cn/#), [Northwestern Polytechnical University](https://www.nwpu.edu.cn/). 
+Now I am major in Electronic information engineering.
 
-# the double title proble is still here 
+Educations
+======
+19-now NWPU
 
-> site looks like this
+Honors and Awards
+======
+- National Scholarship
 
-- here is the list
-- try it out please
-
-1. wiht index
-2. it looks like this
-
-|table1|lala|
-|:---:|:---:|
-|one | two|
-|three| four|
+Project
+======
+Hovac Robot
