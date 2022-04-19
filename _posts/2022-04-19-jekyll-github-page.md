@@ -10,7 +10,8 @@ author_profile: true
 
 现在你正在看的这个博客就是使用jekyll搭建在github page上的，并且使用了mmistake主题。下面我将以下几个方面进行简单的介绍。
 
-[TOC]
+- 这个无序列表会被替换成目录
+{:toc}
 
 # 前置知识
 本博客默认您了解以下内容
@@ -20,15 +21,15 @@ author_profile: true
 - Github（有一个Github账户，并有能稳定访问Github的网络环境）
 
 # 为什么使用jekyll加github page
-&emsp;&emsp;首先，网页分为静态网页和动态网页，因为博主不是计算机/软件专业的，所以具体的区别就不详细叙述，大家网上随便一搜就能找到[^1]，不需要我班门弄斧了。对应的，搭建自己的博客也就分为了动态博客与静态博客，也对应了不同的搭建工具，它们都能大幅的简化我们简历博客的流程，让小白也能建立自己的博客。
+首先，网页分为静态网页和动态网页，因为博主不是计算机/软件专业的，所以具体的区别就不详细叙述，大家网上随便一搜就能找到[^1]，不需要我班门弄斧了。对应的，搭建自己的博客也就分为了动态博客与静态博客，也对应了不同的搭建工具，它们都能大幅的简化我们简历博客的流程，让小白也能建立自己的博客。
 
-&emsp;&emsp;静态博客常用的主要有[jekyll](http://jekyllcn.com/)，[hexo](https://hexo.io/zh-cn/index.html)，[hugo](https://www.gohugo.org/)等，网上也能找到对应的优缺点对比，就不再赘述。
+静态博客常用的主要有[jekyll](http://jekyllcn.com/)，[hexo](https://hexo.io/zh-cn/index.html)，[hugo](https://www.gohugo.org/)等，网上也能找到对应的优缺点对比，就不再赘述。
 
-&emsp;&emsp;动态博客用的比较多的应该是WordPress，但是需要注意的是，使用动态博客必须有一个自己的服务器，并且最好有一个域名，所以成本自然就上去了。
+动态博客用的比较多的应该是WordPress，但是需要注意的是，使用动态博客必须有一个自己的服务器，并且最好有一个域名，所以成本自然就上去了。
 
-&emsp;&emsp;经过多方比较和综合考虑，我先是决定了使用静态博客搭配Github Page（因为我的云服务器和域名还有几个月就过期了），又因为jekyll与Github Page的搭配是最好的（Github Page好像就是基于jekyll的），所以我最终选择了使用jekyll。
+经过多方比较和综合考虑，我先是决定了使用静态博客搭配Github Page（因为我的云服务器和域名还有几个月就过期了），又因为jekyll与Github Page的搭配是最好的（Github Page好像就是基于jekyll的），所以我最终选择了使用jekyll。
 
-&emsp;&emsp;需要注意的一点是jekyll是基于ruby的，但是据说ruby对于windows的支持并不十分良好，但是没有linux经验的同学也不要担心，如果你只是想搭建一个在线博客，并不需要在本地搭建环境，所以完全不会linux也是没有问题。
+需要注意的一点是jekyll是基于ruby的，但是据说ruby对于windows的支持并不十分良好，但是没有linux经验的同学也不要担心，如果你只是想搭建一个在线博客，并不需要在本地搭建环境，所以完全不会linux也是没有问题。
 
 # Github Page 的相关设置
 我对这一部分也不是特别的熟悉，只能简单的说一下对应的过程，其背后的原理就不清楚了。
@@ -39,11 +40,11 @@ author_profile: true
 4. 【*可选* 】 写一个index.html，push上去，访问 https://username.github.io （username是你的GitHub用户名），看看是不是对应的index.html的内容。
 
 # jekyll的相关知识
-&emsp;&emsp;本质上jekyll就是一个转换器，将你写的markdown文件转化成HTML，并加上对应的主题等等，实现一个静态的博客，同时你也可以添加一些插件来实现各种功能。
+本质上jekyll就是一个转换器，将你写的markdown文件转化成HTML，并加上对应的主题等等，实现一个静态的博客，同时你也可以添加一些插件来实现各种功能。
 
 jekyll的相关知识通过其[官方文档](http://jekyllcn.com/docs/)就可以完全掌握，如果在我学习过程中没有遇到问题则不会对其进行过多的讲解，官方的中文文档已经足够清晰。
 
-> &emsp;&emsp;**如果只想写博客，并不想了解更多，或者相应的专业知识比较少，文档的内容可以只看[欢迎](http://jekyllcn.com/docs/home/)和[目录结果](http://jekyllcn.com/docs/structure/)部分。**
+> **如果只想写博客，并不想了解更多，或者相应的专业知识比较少，文档的内容可以只看[欢迎](http://jekyllcn.com/docs/home/)和[目录结果](http://jekyllcn.com/docs/structure/)部分。**
 
 ## 开始
 ### 快速指南
