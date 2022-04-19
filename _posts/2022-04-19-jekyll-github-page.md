@@ -35,7 +35,7 @@ author_profile: true
 我对这一部分也不是特别的熟悉，只能简单的说一下对应的过程，其背后的原理就不清楚了。
 
 1. 在自己Github账号中新建一个名为username.github.io的空仓库。
-2. 在仓库的sitting中选择github page。![图片具体](/assets/images/posts/2022-04-19/Snipaste_2022-04-20_00-41-46.png)
+2. 在仓库的sitting中选择github page。![图片具体]({{ site.url }}{{ site.baseurl }}/assets/images/posts/2022-04-19/Snipaste_2022-04-20_00-41-46.png)
 3. 将这个仓库克隆下来，备用。
 4. 【*可选* 】 写一个index.html，push上去，访问 https://username.github.io （username是你的GitHub用户名），看看是不是对应的index.html的内容。
 
