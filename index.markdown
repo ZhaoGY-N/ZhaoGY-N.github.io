@@ -3,9 +3,9 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
+author_profile: true
 ---
 
-# my test title 1
 ## export http_proxy=http://127.0.0.1:12333
 
 # the double title proble is still here 

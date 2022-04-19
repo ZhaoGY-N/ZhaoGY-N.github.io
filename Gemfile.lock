@@ -124,8 +124,11 @@ DEPENDENCIES
   http_parser.rb (~> 0.6.0)
   jekyll (~> 4.2.2)
   jekyll-feed (~> 0.12)
+  jekyll-gist
   jekyll-include-cache
+  jekyll-paginate
   jekyll-remote-theme
+  jekyll-sitemap
   minima (~> 2.5)
   minimal-mistakes-jekyll
   tzinfo (~> 1.2)
