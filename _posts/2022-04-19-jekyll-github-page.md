@@ -1,7 +1,7 @@
 ---
 title: "使用jekyll依托github page搭建自己的博客"
 categories: 
-    - blog
+    - 博客搭建
 tags:
     - jekyll
     - github page
@@ -32,7 +32,8 @@ author_profile: true
 
 经过多方比较和综合考虑，我先是决定了使用静态博客搭配Github Page（因为我的云服务器和域名还有几个月就过期了），又因为jekyll与Github Page的搭配是最好的（Github Page好像就是基于jekyll的），所以我最终选择了使用jekyll。
 
-需要注意的一点是jekyll是基于ruby的，但是据说ruby对于windows的支持并不十分良好，但是没有linux经验的同学也不要担心，如果你只是想搭建一个在线博客，并不需要在本地搭建环境，所以完全不会linux也是没有问题。
+~~需要注意的一点是jekyll是基于ruby的，但是据说ruby对于windows的支持并不十分良好，但是没有linux经验的同学也不要担心，如果你只是想搭建一个在线博客，并不需要在本地搭建环境，所以完全不会linux也是没有问题。~~
+经过亲自测试，现在在window下安装ruby进对于使用jekyll来说，已经非常简单（甚至比linux还简单），根据官方文档[^2]进行安装即可，注意要有比较好的网络环境（你懂的）
 
 ## Github Page 的相关设置
 
@@ -47,7 +48,7 @@ author_profile: true
 
 本质上jekyll就是一个转换器，将你写的markdown文件转化成HTML，并加上对应的主题等等，实现一个静态的博客，同时你也可以添加一些插件来实现各种功能。
 
-jekyll的相关知识通过其[官方文档](http://jekyllcn.com/docs/)就可以完全掌握，如果在我学习过程中没有遇到问题则不会对其进行过多的讲解，官方的中文文档已经足够清晰。
+jekyll的相关知识通过其官方文档[^2]就可以完全掌握，如果在我学习过程中没有遇到问题则不会对其进行过多的讲解，官方的中文文档已经足够清晰。
 
 > **如果只想写博客，并不想了解更多，或者相应的专业知识比较少，文档的内容可以只看[欢迎](http://jekyllcn.com/docs/home/)和[目录结果](http://jekyllcn.com/docs/structure/)部分。**
 
@@ -56,6 +57,7 @@ jekyll的相关知识通过其[官方文档](http://jekyllcn.com/docs/)就可以
 
 #### 快速指南
 {:.no_toc}
+
 ***建议不要跟着这个部分走，可以直接略过***
 
 #### 安装
@@ -122,3 +124,4 @@ jekyll的相关知识通过其[官方文档](http://jekyllcn.com/docs/)就可以
 下一篇博文我将会以[minimal-mistakes](https://mmistakes.github.io/minimal-mistakes/)这个主题为例，介绍一下如何对主题进行定制，同时更加深入的了解jekyll的一些配置和机制。（挖坑。。。。）
 
 [^1]:[C语言教学网](http://c.biancheng.net/view/7186.html)
+[^2]:[jekell官方文档](http://jekyllcn.com/docs/home)
