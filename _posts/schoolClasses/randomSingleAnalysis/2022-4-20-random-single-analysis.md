@@ -3,7 +3,6 @@ title: 随机信号分析复习笔记
 categories: 
     - 课程
     - 随机信号分析
-    - 笔记
 tags:
     - 随机信号分析
     - 复习笔记
@@ -96,7 +95,7 @@ $$
 3. 两个互相不独立的随机变量可以是不相关的。
    - 例题中举的例子是 $$\cos\phi$$ 与 $$\sin\phi$$，两个变量很显然不是统计独立的，但是他们的相关函数与协方差为$$R_{xy}=E(XY)=E(\sin\phi\cos\phi)\\C_{xy}=E[(X-m_x)(Y-m_y)]=E(XY)=0$$ 很显然二者正交且不相关。
 
-### 随机变量/过程的特征函数
+### 随机变量的特征函数
 
 #### 定义
 离散随机变量的特征函数的定义：
@@ -115,12 +114,17 @@ $$
 
 1. 已知一个随时变量的特征函数，可以使用傅里叶变换得到其概率密度函数。
 2. 可以确定随机变量经过某种变换之后的概率密度函数
-    > [例题](#随机变量的概率密度作用例题)：
+    > [例题](../exercises/#随机变量的特征函数例题1)：
     > 本质上也是利用了随机变量函数的概率密度，直接套那个公式好像也是可以的。
 3. 求矩函数、求高阶原点矩
     > $$
-\Phi_x(\omega)=\sum_{k=0}^\infty \frac{\omega^k}{k!}\cdot\left.\frac{d^k\Phi_x(\omega)}{d\omega^k}\right|_{\omega=0}
+    \Phi_x(\omega)=\sum_{k=0}^\infty \frac{\omega^k}{k!}\cdot\left.\frac{d^k\Phi_x(\omega)}{d\omega^k}\right|_{\omega=0}=\sum_{k=0}^\infty\frac{(j\omega)^k}{k!} E(X^k)\\
+    E(X^k)=(-j)^k\frac{d^k\Phi_x(\omega)}{d\omega^k}\left.\right|_{\omega=0}
     > $$
+
+    > 详细过程见PPT，神来之笔是令 $$\omega = 0$$ 。
+    > 由此可得据矩函数与对应的特征函数之间的关系
+
 
 #### 特征函数的性质
 
@@ -154,7 +158,7 @@ $$
     p(\omega)=p_1(x_1)\ast p_2(x_2)\ast ...\ast p_n(x_n)
     $$
 
-> 例题 [随机变量的特征函数例题2](#随机变量的特征函数例题2)
+    > 例题 [随机变量的特征函数例题2](../exercises/#随机变量的特征函数例题2)
 
 #### 随机变量的特征函数与概率密度函数的关系
 
@@ -168,8 +172,72 @@ $$
 p(x) \stackrel{\mathcal{F}} \longleftrightarrow \Phi_x(\omega)
 $$
 
-#### 特征函数与原点矩的关系
-> 使用泰勒展开进行，具体看PPT吧。
+#### 多维特征函数
+
+$$
+\Phi_{x_1x_2}(\omega_1,\omega_2)=E[e^{j\omega X_1+j\omega X_2}]=\int^\infty_{-\infty}\int^\infty_{-\infty} p_2(x_1,x_2)e^{j\omega_1 X_1+j\omega_2 X_2} dx_1 dx_2\\
+p_x(x_1,x_2)=\frac{1}{2\pi}\int^\infty_{-\infty}\int^\infty_{-\infty}\Phi_{x1x_2}(\omega_1,\omega_2)e^{-j\omega_1 X_1-j\omega_2 X_2}d\omega_1 d\omega_2
+$$
+
+#### 多维特征函数的性质
+
+1. 随机变量 $$X_1$$ 和 $$X_2$$统计独立的充分必要条件为： $$\Phi_{x_1,x_2}(\omega_1,\omega_2) = \Phi_{x_1}(\omega_1)\Phi_{x_2}(\omega_2)$$
+2. 二维特征函数在 $$(\omega_1,\omega_2)$$ 二维实平面上一致连续
+3. 二维特征函数包含了一维特征函数的信息
+   > $$
+\Phi_{x_1}(\omega_1) = \Phi_{x_1x_2}(\omega_1,0)
+\Phi_{x_2}(\omega_2) = \Phi_{x_1x_2}(0,\omega_2)
+   > $$
+
+#### N维随机变量的特征函数
+
+![N维变量的特征函数]({{ site.url }}{{ site.baseurl }}\assets\images\posts\schoolClasses\randomSingleAnalysis\Snipaste_2022-04-24_15-12-25.png)
+
+### 随机过程的特征函数
+
+和随机变量相比只是在函数中增加了一个t，计算过程以及性质都是一样的，不在赘述。
+
+#### 随机过程的二维特征函数
+
+和二维随机变量的特征函数类似，详见图。
+![图片]({{ site.url }}{{ site.baseurl }}\assets\images\posts\schoolClasses\randomSingleAnalysis\Snipaste_2022-04-24_15-20-55.png)
+
+**将二维特征函数对变量 $$\omega$$ 求偏导 $$n$$ 次，可得 $$n$$ 阶*混合原点*矩函数**
+
+**则其自相关函数为**
+
+$$
+R_x(t_1,t_2)=\int^\infty_{-\infty}\int^\infty_{-\infty}x_1 x_2 p_2(x_1,x_2;t_1,t_2)dx_1 dx_2 = -\frac{\partial^2\Phi(\omega_1,\omega_2;t_1,t_2)}{\partial\omega_1\partial\omega_2}\left.\right|_{\omega_1\omega-2=0}
+$$
+
+### 随机过程的平稳性
+
+#### 特点
+
+统计特性（概率，矩）不随时间的平移而变化
+
+#### 分类
+
+1. 狭义平稳随机过程（严格平稳）：任意n维概率分布不随时间的平移而变化
+   - 由同分布的随机变量组成
+2. 广义平稳：矩函数不随时间的平移而变化，数学期望 $$E[X(t)]=m_X=C$$ 不随时间发生变化，自相关函数 $$R_X(t_1,t_2)=R_X(\tau)$$ 只与时间间隔相关。
+   - 可以用矩的方法判断广义平稳，严格平稳则必须使用概率密度判断
+   - 严格平稳必定为广义平稳，反之未必成立
+   - 对于正态过程，广义平稳一定严格平稳（其分布只与均值和方差有关）
+
+#### 说明
+
+1. 平稳性是随机信号的随机特性对于参量（组）的移动不变性，即平稳随机信号的测试不受观察时刻的影响
+2. 应用于研究最多的平稳信号是广义平稳信号
+3. 严格平稳信号因要求太“苛刻”，更多的用于理论研究之中
+4. 经验判据：如果产生于影响随机信号的主要物理条件不改变，那么通常可以认为此信号是平稳的
+5. 非平稳信号：在较短的时间段内可以认为是一个平稳信号
+
+#### 性质
+
+- 彼此统计独立的平稳随机过程，它们乘积的均值和自相关函数等于各个随机过程的均值和自相关函数的乘积，所以广义平稳过程的成绩也是广义平稳过程。
+- 平稳周期性随机过程的自相关函数也满足周期性。
+
 
 ## 作业中的重要知识点
 
@@ -181,96 +249,3 @@ p(x) = \frac{1}{\sqrt{2\pi}\sigma}\exp\left[-\frac{(x-m)^2}{2\sigma^2}\right]
 $$
 
 **注意负号**
-
-## 作业题更正
-
-### 作业P11 题2-2
-不是很能理解，暂时先放弃，后面再来看吧。
-![题图]({{ site.url }}{{ site.baseurl }}/assets/images/posts/2022-04-20/Snipaste_2022-04-21_21-05-13.png)
-
-## PPT例题
-
-### 随机变量的特征函数例题1
-例题：随机变量 $$X$$ 均匀分布于 $$\left( -\frac{\pi}{2},\frac{\pi}{2}\right) $$ 上。其非线性变换关系为$$Y=\sin X$$，求$$p(y)$$
-
-答：Y 的特征函数为
-
-$$
-\Phi_y(\omega)=E[e^{j\omega Y}]=\int^\infty_{-\infty} e^{j\omega \sin x}p(x)dx
-$$
-
-将 $$dx$$ 替换为 $$dy$$ 。
-
-$$
-dx=d(\arcsin y)=\frac{1}{\sqrt{1-y^2}}dy
-$$
-
-将 $$p(x)$$ 和 $$dx$$ 带入可得
-
-$$
-\Phi_y(\omega)=\int^1_{-1} e^{j \omega y} \frac{1}{\pi\sqrt{1-y^2}}dy
-$$
-
-利用特征函数和概率密度的关系可得
-
-$$
-p(y)=\frac{1}{\pi\sqrt{q-y^2}}
-$$
-
-### 随机变量的特征函数例题2
-
-独立分布随机变量 $$X_1,X_2,\dots ,X_n$$ 服从高斯分布，其均值为零，方差为 $$\sigma^2_x$$ ，样本 $$X_k$$ 平均值为 $$\bar X = \frac{1}{n} \sum^n_{k=1} X_k$$ ，求 $$p(\bar x)$$
-
-答：如果使用相加的概率密度分布的关系的话，只能处理两个，多个的卷积不容易找到规律，所以使用**特征函数**将卷积转换为相乘，这样就能找到规律了。
-
-先求 $$X$$ 的特征函数
-
-$$
-\Phi_{x_k}(\omega) = \int_{-\infty}^\infty \exp{\left(j\omega x_k\right)} \frac{1}{\sqrt{2\pi}\sigma_x} \exp{\left(-\frac{x_k^2}{2\sigma_x^2}\right)}= exp \left(-\frac{\omega^2\sigma_x^2}{2}\right)
-$$
-
-> 积分的过程首先是将常数提出去，然后将指数函数中的平方相配成完全平方，把配出来的一项继续提出来，然后进行代换，可以得到如下式子
-
-> $$
-\Phi_{x_k}(\omega) = \frac{\exp{\left(-\frac{\omega^2\sigma^2_x}{2}\right)}}{\sqrt{\pi}}\int_{-\infty}^\infty e^{-u^2} du
-> $$
-
-> 这里有一个超越函数的积分，即
-
-> $$
-I = \int_{-\infty}^{\infty} e^{-u^2}du
-> $$
-
-> 这个积分不能使用分步积分计算（**具体原因我也不太清楚，反正不行，结果是错的**），简单的办法可以使用正态分布的概率密度积分为1进行反推，也可以转化到极坐标系下进行，具体可以看知乎这篇文章[《∫e^(-x^2)dx的三种方法》](https://zhuanlan.zhihu.com/p/146348325)。
-
-令 $$Y = \sum_{k=1}^{n} X_k$$ ，由特征函数的性质可得
-
-$$
-\Phi_y(\omega) = \prod_{k=1}^n \Phi_{x_k}(\omega)=\exp{\left(-\frac{n\omega^2\sigma_x^2}{2}\right)}
-$$
-
-又因为
-
-$$
-\bar{X} = \frac{1}{n} \sum_{k=1}^{n} X_k = \frac{1}{n} Y
-$$
-
-使用特征函数的线性定理可得
-
-$$
-\Phi_{\bar{x}} = \exp{\left(-\frac{\omega^2\sigma^2_x}{2n}\right)}
-$$
-
-则根据第一步得到的正态分布的特征函数可以得到
-1. $$\bar{X}$$ 仍为正态分布，由此可得对应的
-2. 均值为0
-3. 方差为 $$\frac{\sigma_x^2}{n}$$
-
-> 这一结论与直接使用概率论的相关结论是一致的。
-> $$
-\begin{eqnarray}
-D\left(\bar{X}\right)&=&D\left(\frac{1}{n}\sum_{i=1}^n X_i\right)\\
-&=&\frac{1}{n^2}\sum_{i=1}^n D(X_i)=\frac{1}{n^2}\sum_{i=1}^n \sigma^2 = \frac{1}{n} \sigma^2\\
-D\left(\bar{X}\right)&=&\frac{1}{n}\sigma^2\\
-\end{eqnarray}
-> $$
