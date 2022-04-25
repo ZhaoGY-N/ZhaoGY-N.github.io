@@ -18,6 +18,8 @@ mathjax: true
 可以通过在 `_includes\head\custom.html` 中添加一个代码段，并添加对应的liquid模板条件的方式实现在YAML的头文件中添加一个mathjax:true就能实现渲染的功能。详见[GitHub issues](https://github.com/mmistakes/minimal-mistakes/issues/735)
 现在这个就能渲染latex了
 
+> 这个问题在[latex渲染问题](#latex-无法渲染部分公式) 中更新了方法
+
 $$
 p_2(y_1,y_2)=p_2(x_1,x_2)\left|\frac{\partial (x_1,x_2)}{\partial(y_1,y_2)}\right|=p_2[h_1(y_1,y_2),h_2(y_1,y_2)]\left|\frac{\partial (x_1,x_2)}{\partial(y_1,y_2)}\right|\\
 \frac{\partial (x_1,x_2)}{\partial(y_1,y_2)}=\left|\begin{matrix} \frac{\partial x_1}{\partial y_1} & \frac{\partial x_1}{\partial y_2}\\ \frac{\partial x_2}{\partial y_1}&\frac{\partial x_2}{\partial y_2}\end{matrix}\right|
@@ -34,3 +36,7 @@ kramdwon只能使用两个$$作为公式段的开头和结尾，即使是行内�
 ## 阅读时间不准
 
 直接禁用了，本身也不是很需要这个
+
+## latex 无法渲染部分公式
+
+latex 渲染使用了MathJax的功能，所以去稍微了解了一下，发现之前latex无法渲染那里的配置其实并不是很好，用了mathjax文档里的，完美解决，现在也可以使用\$\$作为行内公式了。
