@@ -58,9 +58,11 @@ $$
 没有减去数学期望，包含了**均值和方差对相关程度的影响**
 
 #### 协方差——混合中心距
+
 $$
 C_X(t_1,t_2)=E\{ \left[ X(t_1)-m_X(t_1) \right]\left[ X(t_2)-m_X(t_2) \right]\}
 $$
+
 减去了数学期望，反应一个随机过程在不同两个时刻的取值时间的平均关系程度。包含了离散程度对相关程度的影响
 
 #### 自相关函数与协方差和方差的关系
@@ -73,7 +75,7 @@ $$\therefore \sigma^2_X(t)=E[X^2(t)]-m^2_X(t)$$
 #### 相关系数——归一化协方差
 
 $$
-r_xy=\frac{C_xy}{\sigma_x \sigma_y}
+r_{xy}=\frac{C_{xy}}{\sigma_x \sigma_y}
 $$
 
 > 这个只看到对随机变量的定义，没看到对随机过程的。。。。
@@ -260,6 +262,31 @@ R_X(0)=E[X^2(t)]\geq 0\\
 R_X(\tau)=R_X(-\tau),C_X(\tau)=C_X(-\tau)\\
 R_X(0) \geq |R_X(\tau)|
 $$
+
+若**平稳随机过程**不含周期分量 $$ R_x(\infty)=\lim_{|\tau|\rightarrow\infty} R_x(\tau) = m_x^2,  C_x(\infty)=0 $$
+
+注意这样得到的数学期望会有一个正负号，两个都是合理的。
+
+**平稳随机过程**的自相关函数的傅里叶变量是非负数
+
+#### 判断函数是否是相关函数
+
+1. 对称性
+2. 连续性（）
+3. 0处取得最大值
+
+#### 相关系数
+
+相关系数是归一化处理后的自相关函数
+
+$$
+r_x(\tau)=\frac{R_x(\tau)-R_x(\infty)}{R_x(0)-R_x(\infty)}=\frac{C_x(\tau)}{C_x(0)}=\frac{C_x(\tau)}{\sigma_x^2}
+$$
+![图片]({{site.url}}{{site.baseurl}}\assets\images\posts\schoolClasses\randomSingleAnalysis\Snipaste_2022-04-25_21-00-06.png)
+
+#### 相关时间
+
+这边，相关系数降至5%所用的时间被称为相关时间
 
 ## 作业中的重要知识点
 
