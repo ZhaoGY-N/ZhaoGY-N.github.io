@@ -316,10 +316,72 @@ $$
    2. 它们的互相关函数仅是时间间隔 $$ \tau = t_2 - t_1 $$ 的单变量随机函数，即 $$ R_{XY}(t_1,t_2) = R_{XY}(\tau)$$
    3. 则称随机过程 $$ X(t),Y(t) $$ 宽平稳相关，简称联合平稳
 3. 各态历经性：当随机过程 $$ X(t),Y(t) $$ 联合平稳时，若 $ \left<X(t)Y(t)\right> \xlongequal{P} \overline{X(t)Y(t+\tau)}  $
+4. 独立性： $P_{m+n}(\cdots)=P_n(\cdots)P_m(\cdots)$，统计独立
+5. 不相关： $R_{XY}(\tau)=\text{常数},C_{XY}(t)=0,r_{xy}(t)=0$ ，则称为不相关
+   - 判断条件：$R_{XY}=E[X(t)Y(t_\tau)]=m_Xm_y $
+   - 或 $E[X(t)Y(t+\tau)]=E[X(t)]\cdot E[Y(t+\tau)] $
+6. 正交性：若对于任意的 $\tau$ 都有，$R_{XY}(\tau)=0,C_{XY}(\tau)=-m_X m_Y $，则正交
 
 #### 互相关函数的性质
 
+1. $R_{XY}(\tau) = R_{YX}(-\tau) \quad R_{XY}(0)=R_{YX}(0) \quad C_{XY}(\tau)=C_{YX}(-\tau)$ ![图片]({{site.url}}{{site.baseurl}}\assets\images\posts\schoolClasses\randomSingleAnalysis\Snipaste_2022-04-25_23-01-38.png)
+2. ![图片]({{site.url}}{{site.baseurl}}\assets\images\posts\schoolClasses\randomSingleAnalysis\Snipaste_2022-04-25_23-03-02.png)
+3. ![图片]({{site.url}}{{site.baseurl}}\assets\images\posts\schoolClasses\randomSingleAnalysis\Snipaste_2022-04-25_23-05-26.png)
+
 #### 互相关函数应用的工程实例
+
+互相关接收器
+
+### 平稳随机过程的功率谱密度
+
+1. 能量信号：能量有限，持续时间有限（非周期），平均功率为零
+2. 功率信号：能量趋于无穷，平均功率有限（周期性信号或随机信号）
+> 一个信号可以既不是能量型信号，也不是功率型信号，但是不可能既是能量型信号又是功率型信号
+
+#### 巴萨瓦尔定理
+
+$$
+E=\int^\infty_{-\infty}|s(t)|^2dt=\frac{1}{2\pi}\int^\infty_{-\infty}|S(\omega)|^2d\omega
+$$
+
+总能量等于各频谱分量能量之和
+
+或者说：一个信号所含的能量（功率）恒等于此信号在完备正交函数集中各分量能量（功率）之和
+
+### 功率谱密度的定义
+
+将样本信号截短，宽度为T，使其变成能量有限性信号，则可进行傅里叶变换。
+
+经过推导可得
+
+$$
+G_X(\omega)=E\left[\lim_{T\rightarrow\infty}\frac{|X_T(\omega)|^2}{T}\right]
+$$
+
+### **维纳-辛钦定理**
+
+$$
+R_X(\tau)\stackrel{\mathcal{F}} \longleftrightarrow G_X(\omega)
+$$
+
+自相关函数的傅里叶变换是功率谱密度。
+
+$$
+R_X(\tau)=\frac{1}{2\pi}\int_{-\infty}^\infty G_X(\omega)e^{j\omega\tau}d\omega
+$$
+
+注意一下几点问题：
+1. 又傅里叶变换可知，时域信号 $R_X(\tau)$ 必须满足以下绝对可积条件
+
+    $$
+    \int^{\infty}_{-\infty}|R_x(\tau)|d\tau<\infty \quad \int^{\infty}_{-\infty}|G_x(\omega)|d\omega<\infty
+    $$
+
+2. 维纳-辛钦定理进对**平稳过程**的相关函数$R_X(\tau)$才有用
+3. 功率谱密度为自相关函数的傅里叶变换，包含$R_X(\tau)$中的所有全部信息
+4. 功率谱密度反应信号的频域结构，这一点与幅度谱相似，但是自功率谱密度所反应的是信号幅制的平方，因此频域结构更加明显
+
+
 
 ## 作业中的重要知识点
 
