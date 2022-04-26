@@ -21,10 +21,12 @@ mathjax: true
 > 这里会出考题，和概率论的类似，求变换后的概率密度，作业题1-22
 
 基本做法：使用Y到X的变换关系，求导数，然后带个公式就行了。
-****
+
 $$
+\begin{gather*}
 x=h(y)\\
 p(y)= \left| \frac{dx}{dy} \right| p(x)= \left| \frac{dx}{dy} \right| p[h(y)]
+\end{gather*}
 $$
 
 也有一些结论，比如两个**相互独立**的变量的和的概率分布是两个变量的概率分布的卷积（作业1-24）。可以看概率论PPT《随机变量的函数及分布》，**里面有结论及推导**。
@@ -32,8 +34,10 @@ $$
 难点是多个变量的变换，需要使用雅可比行列式。（作业题1-15）~~个人感觉不会考这个部分。~~我也说不准，还是把雅可比矩阵背一下。
 
 $$
+\begin{gather*}
 p_2(y_1,y_2)=p_2(x_1,x_2)\left|\frac{\partial (x_1,x_2)}{\partial(y_1,y_2)}\right|=p_2[h_1(y_1,y_2),h_2(y_1,y_2)]\left|\frac{\partial (x_1,x_2)}{\partial(y_1,y_2)}\right|\\
-\frac{\partial (x_1,x_2)}{\partial(y_1,y_2)}=\left|\begin{matrix} \frac{\partial x_1}{\partial y_1} & \frac{\partial x_1}{\partial y_2}\\ \frac{\partial x_2}{\partial y_1}&\frac{\partial x_2}{\partial y_2}\end{matrix}\right|
+\frac{\partial (x_1,x_2)}{\partial(y_1,y_2)}=\left|\begin{matrix}\frac{\partial x_1}{\partial y_1}\frac{\partial x_1}{\partial y_2}\\\frac{\partial x_2}{\partial y_1}\frac{\partial x_2}{\partial y_2}\end{matrix}\right|
+\end{gather*}
 $$
 
 ### 随机过程的二维概率分布
@@ -120,8 +124,10 @@ $$
     > 本质上也是利用了随机变量函数的概率密度，直接套那个公式好像也是可以的。
 3. 求矩函数、求高阶原点矩
     > $$
+    \begin{gather*}
     \Phi_x(\omega)=\sum_{k=0}^\infty \frac{\omega^k}{k!}\cdot\left.\frac{d^k\Phi_x(\omega)}{d\omega^k}\right|_{\omega=0}=\sum_{k=0}^\infty\frac{(j\omega)^k}{k!} E(X^k)\\
     E(X^k)=(-j)^k\frac{d^k\Phi_x(\omega)}{d\omega^k}\left.\right|_{\omega=0}
+    \end{gather*}
     > $$
 
     > 详细过程见PPT，神来之笔是令 $$\omega = 0$$ 。
@@ -134,10 +140,10 @@ $$
 2. 线性定理
 
     $$
-    \begin{eqnarray}
-    Y&=&g(X)=aX+b\\
-    \Phi_Y(\omega)&=&\Phi_x(a\omega)e^{j\omega b}
-    \end{eqnarray}
+    \begin{gather*}
+    Y=g(X)=aX+b\\
+    \Phi_Y(\omega)=\Phi_x(a\omega)e^{j\omega b}
+    \end{gather*}
     $$
 
 3. 如果随机变量 $$M_1$$ 与 $$M_2$$ 统计独立，则对于 $$Y=X_1+X_2$$ 的变换，其特征函数为
@@ -177,8 +183,10 @@ $$
 #### 多维特征函数
 
 $$
+\begin{gather*}
 \Phi_{x_1x_2}(\omega_1,\omega_2)=E[e^{j\omega X_1+j\omega X_2}]=\int^\infty_{-\infty}\int^\infty_{-\infty} p_2(x_1,x_2)e^{j\omega_1 X_1+j\omega_2 X_2} dx_1 dx_2\\
 p_x(x_1,x_2)=\frac{1}{2\pi}\int^\infty_{-\infty}\int^\infty_{-\infty}\Phi_{x1x_2}(\omega_1,\omega_2)e^{-j\omega_1 X_1-j\omega_2 X_2}d\omega_1 d\omega_2
+\end{gather*}
 $$
 
 #### 多维特征函数的性质
@@ -187,8 +195,8 @@ $$
 2. 二维特征函数在 $$(\omega_1,\omega_2)$$ 二维实平面上一致连续
 3. 二维特征函数包含了一维特征函数的信息
    > $$
-\Phi_{x_1}(\omega_1) = \Phi_{x_1x_2}(\omega_1,0)
-\Phi_{x_2}(\omega_2) = \Phi_{x_1x_2}(0,\omega_2)
+    \Phi_{x_1}(\omega_1) = \Phi_{x_1x_2}(\omega_1,0)
+    \Phi_{x_2}(\omega_2) = \Phi_{x_1x_2}(0,\omega_2)
    > $$
 
 #### N维随机变量的特征函数
@@ -252,18 +260,26 @@ $$
 #### 性质
 
 $$
+\begin{gather*}
 R_X(t_1,t_2)=C_X(t_1,t_2)+m_X(t_1)m_X(t_2)\\
 C_X(\tau)=R_X(\tau)-m^2_X\\
 C_X(0)=\sigma_x^2
+\end{gather*}
 $$
 
 $$
+\begin{gather*}
 R_X(0)=E[X^2(t)]\geq 0\\
 R_X(\tau)=R_X(-\tau),C_X(\tau)=C_X(-\tau)\\
 R_X(0) \geq |R_X(\tau)|
+\end{gather*}
 $$
 
-若**平稳随机过程**不含周期分量 $$ R_x(\infty)=\lim_{|\tau|\rightarrow\infty} R_x(\tau) = m_x^2,  C_x(\infty)=0 $$
+若**平稳随机过程**不含周期分量，则有
+
+$$
+R_x(\infty)=\lim_{|\tau|\rightarrow\infty} R_x(\tau) = m_x^2  C_x(\infty)=0
+$$
 
 注意这样得到的数学期望会有一个正负号，两个都是合理的。
 
@@ -282,6 +298,7 @@ $$
 $$
 r_x(\tau)=\frac{R_x(\tau)-R_x(\infty)}{R_x(0)-R_x(\infty)}=\frac{C_x(\tau)}{C_x(0)}=\frac{C_x(\tau)}{\sigma_x^2}
 $$
+
 ![图片]({{site.url}}{{site.baseurl}}\assets\images\posts\schoolClasses\randomSingleAnalysis\Snipaste_2022-04-25_21-00-06.png)
 
 #### 相关时间
@@ -348,7 +365,7 @@ $$
 
 或者说：一个信号所含的能量（功率）恒等于此信号在完备正交函数集中各分量能量（功率）之和
 
-### 功率谱密度的定义
+#### 功率谱密度的定义
 
 将样本信号截短，宽度为T，使其变成能量有限性信号，则可进行傅里叶变换。
 
@@ -358,7 +375,7 @@ $$
 G_X(\omega)=E\left[\lim_{T\rightarrow\infty}\frac{|X_T(\omega)|^2}{T}\right]
 $$
 
-### **维纳-辛钦定理**
+#### **维纳-辛钦定理**
 
 $$
 R_X(\tau)\stackrel{\mathcal{F}} \longleftrightarrow G_X(\omega)
@@ -381,15 +398,98 @@ $$
 3. 功率谱密度为自相关函数的傅里叶变换，包含$R_X(\tau)$中的所有全部信息
 4. 功率谱密度反应信号的频域结构，这一点与幅度谱相似，但是自功率谱密度所反应的是信号幅制的平方，因此频域结构更加明显
 
+#### 简单求解法
 
+利用$G_X$是一个实偶函数的特点
+
+$$
+\begin{gather*}
+\left.
+\begin{array}
+G_X(\omega) = 2\int^\infty_0 R_x(\tau)\cos\omega\tau d\tau \\
+R_x(\tau)=\frac{1}{\pi}\int^\infty_0 G_X(\omega\tau) \cos\omega\tau d\omega\\
+\end{array}
+\right\}\text{注意这里两个cos都是正的}\\
+F_x(\omega)=2G_x(\omega)\quad \omega>0
+\end{gather*}
+$$
+
+#### 联合平稳随机过程的互谱密度
+
+![图片]({{site.url}}{{site.baseurl}}\assets\images\posts\schoolClasses\randomSingleAnalysis\Snipaste_2022-04-26_17-15-49.png)
+
+### 复随机过程
+
+#### 实信号的复数表示
+
+将窄带信号的载波频率与信号通过三角函数进行分离
+
+实信号：$s(t)=a_x(t)cos[\omega_0(t)+\phi_x(t)]$
+
+实信号经过和差化积：$s(t)=s_I(t)\cos(\omega_0 t)-s_Q(t)\sin(\omega_0 t)$
+
+复信号：$\tilde{s}(t)=s(t)+j\hat{s}(t)$
+
+#### 希尔伯特变换
+
+$$
+\hat{s}(t)=s(t)\otimes\frac{1}{\pi t}=H[s(t)]
+$$
+
+公式重点记住$\frac{1}{\pi t}$
+
+#### 数学期望
+
+分别是实部的数学期望以及虚部的数学期望
+
+#### 方差
+
+$$
+D[Z]=D[X]+D[Y]=E[\mathring{X^2}]-E[\mathring{Y^2}]+E[2j\mathring{X}\mathring{Y}]
+$$
+
+#### 协方差
+
+$$
+C_{Z_1 Z_2}=C_{X_1 X_2}+C_{Y_1 Y_2}+j[C_{X_1 Y_2}-C_{Y_1 X_2}]
+$$
+
+#### 相关函数
+
+$$
+\begin{gather*}
+R_{X\hat{X}}(\tau)=-R_{X\hat{X}}(-\tau)\\
+R_{X\hat{X}}(\tau)=R_{\hat{X}X}(-\tau)
+\end{gather*}
+$$
+
+#### 功率谱密度
+
+$$
+\begin{gather*}
+G_{\tilde{X}}(\omega)=\left\{ \begin{array} \text{4} G_X(\omega) \quad \omega>0 \\0 \quad \omega<0\end{array} \right.
+\end{gather*}
+$$
+
+#### 窄带噪声
+
+若白噪声（宽带）通过一个带通滤波器（窄带），且$\frac{\Delta\omega}{\omega_0}\gtrless 1$，则此噪声成为一个窄带噪声，这种窄带噪声成为窄带随机过程或窄带过程
+
+窄带随机过程**幅值的分布**为**正态分布**
+
+自相关函数实部与虚部相等。
+
+![图片]({{site.url}}{{site.baseurl}}\assets\images\posts\schoolClasses\randomSingleAnalysis\Snipaste_2022-04-26_23-01-41.png)
 
 ## 作业中的重要知识点
 
 1. 正态分布的公式一定要记清。
 
 $$
+\begin{gather*}
 x\sim N(m,\sigma^2)\\
 p(x) = \frac{1}{\sqrt{2\pi}\sigma}\exp\left[-\frac{(x-m)^2}{2\sigma^2}\right]
+\end{gather*}
 $$
 
 **注意负号**
