@@ -5,7 +5,7 @@ categories:
     - 随机信号分析
 tags:
     - 随机信号分析
-    - 复习笔记
+    - 复习
 mathjax: true
 ---
 
