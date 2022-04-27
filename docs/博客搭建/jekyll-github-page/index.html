@@ -1,0 +1,773 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="zh" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>使用jekyll依托github page搭建自己的博客 - My Site</title>
+<meta name="description" content="现在你正在看的这个博客就是使用jekyll搭建在github page上的，并且使用了mmistake主题。下面我将以下几个方面进行简单的介绍。">
+
+
+  <meta name="author" content="ZhaoGuangyu">
+  
+  <meta property="article:author" content="ZhaoGuangyu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="My Site">
+<meta property="og:title" content="使用jekyll依托github page搭建自己的博客">
+<meta property="og:url" content="https://zhaogy-n.github.io//%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/jekyll-github-page/">
+
+
+  <meta property="og:description" content="现在你正在看的这个博客就是使用jekyll搭建在github page上的，并且使用了mmistake主题。下面我将以下几个方面进行简单的介绍。">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-04-19T00:00:00+08:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://zhaogy-n.github.io//%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/jekyll-github-page/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "ZhaoGuangyu",
+      "url": "https://zhaogy-n.github.io//"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">转到主导航栏</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">转到内容</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">转到底部</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          My Site
+          <span class="site-subtitle">personnal notes and thoughs</span>
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">切换搜索</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">切换菜单</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/ProfilePicture.png" alt="ZhaoGuangyu" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">ZhaoGuangyu</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>An ordinary person.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">关注</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Shaanxi Xi'an</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:zhaoguangyu@mail.nwpu.edu.cn" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://zhaogy-n.github.io/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/ZhaoGY-N" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="使用jekyll依托github page搭建自己的博客">
+    <meta itemprop="description" content="现在你正在看的这个博客就是使用jekyll搭建在github page上的，并且使用了mmistake主题。下面我将以下几个方面进行简单的介绍。">
+    <meta itemprop="datePublished" content="2022-04-19T00:00:00+08:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">使用jekyll依托github page搭建自己的博客
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          10 分钟阅读
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>现在你正在看的这个博客就是使用jekyll搭建在github page上的，并且使用了mmistake主题。下面我将以下几个方面进行简单的介绍。</p>
+
+<ul id="markdown-toc">
+  <li><a href="#前置知识" id="markdown-toc-前置知识">前置知识</a></li>
+  <li><a href="#为什么使用jekyll加github-page" id="markdown-toc-为什么使用jekyll加github-page">为什么使用jekyll加github page</a></li>
+  <li><a href="#github-page-的相关设置" id="markdown-toc-github-page-的相关设置">Github Page 的相关设置</a></li>
+  <li><a href="#jekyll的相关知识" id="markdown-toc-jekyll的相关知识">jekyll的相关知识</a></li>
+  <li><a href="#找到一个喜欢的主题" id="markdown-toc-找到一个喜欢的主题">找到一个喜欢的主题</a></li>
+  <li><a href="#使用jekyll搭配github-page最简单的方法" id="markdown-toc-使用jekyll搭配github-page最简单的方法">使用jekyll搭配Github Page最简单的方法</a></li>
+  <li><a href="#总结" id="markdown-toc-总结">总结</a></li>
+</ul>
+
+<h2 id="前置知识">前置知识</h2>
+
+<p>本博客默认您了解以下内容</p>
+
+<ul>
+  <li>HTML（知道是什么就行）</li>
+  <li>MarkDown（至少能熟练编写）</li>
+  <li>Git（会add,commit,clone,pull,push就可以）</li>
+  <li>Github（有一个Github账户，并有能稳定访问Github的网络环境）</li>
+</ul>
+
+<h2 id="为什么使用jekyll加github-page">为什么使用jekyll加github page</h2>
+
+<p>首先，网页分为静态网页和动态网页，因为博主不是计算机/软件专业的，所以具体的区别就不详细叙述，大家网上随便一搜就能找到<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>，不需要我班门弄斧了。对应的，搭建自己的博客也就分为了动态博客与静态博客，也对应了不同的搭建工具，它们都能大幅的简化我们简历博客的流程，让小白也能建立自己的博客。</p>
+
+<p>静态博客常用的主要有<a href="http://jekyllcn.com/">jekyll</a>，<a href="https://hexo.io/zh-cn/index.html">hexo</a>，<a href="https://www.gohugo.org/">hugo</a>等，网上也能找到对应的优缺点对比，就不再赘述。</p>
+
+<p>动态博客用的比较多的应该是WordPress，但是需要注意的是，使用动态博客必须有一个自己的服务器，并且最好有一个域名，所以成本自然就上去了。</p>
+
+<p>经过多方比较和综合考虑，我先是决定了使用静态博客搭配Github Page（因为我的云服务器和域名还有几个月就过期了），又因为jekyll与Github Page的搭配是最好的（Github Page好像就是基于jekyll的），所以我最终选择了使用jekyll。</p>
+
+<p><del>需要注意的一点是jekyll是基于ruby的，但是据说ruby对于windows的支持并不十分良好，但是没有linux经验的同学也不要担心，如果你只是想搭建一个在线博客，并不需要在本地搭建环境，所以完全不会linux也是没有问题。</del>
+经过亲自测试，现在在window下安装ruby进对于使用jekyll来说，已经非常简单（甚至比linux还简单），根据官方文档<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>进行安装即可，注意要有比较好的网络环境（你懂的）</p>
+
+<h2 id="github-page-的相关设置">Github Page 的相关设置</h2>
+
+<p>我对这一部分也不是特别的熟悉，只能简单的说一下对应的过程，其背后的原理就不清楚了。</p>
+
+<ol>
+  <li>在自己Github账号中新建一个名为username.github.io的空仓库。</li>
+  <li>在仓库的sitting中选择github page。<img src="https://zhaogy-n.github.io//assets/images/posts/2022-04-19/Snipaste_2022-04-20_00-41-46.png" alt="图片具体" /></li>
+  <li>将这个仓库克隆下来，备用。</li>
+  <li>【<em>可选</em> 】 写一个index.html，push上去，访问 <code class="language-plaintext highlighter-rouge">https://username.github.io</code> （username是你的GitHub用户名），看看是不是对应的index.html的内容。</li>
+</ol>
+
+<h2 id="jekyll的相关知识">jekyll的相关知识</h2>
+
+<p>本质上jekyll就是一个转换器，将你写的markdown文件转化成HTML，并加上对应的主题等等，实现一个静态的博客，同时你也可以添加一些插件来实现各种功能。</p>
+
+<p>jekyll的相关知识通过其官方文档<sup id="fnref:2:1" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>就可以完全掌握，如果在我学习过程中没有遇到问题则不会对其进行过多的讲解，官方的中文文档已经足够清晰。</p>
+
+<blockquote>
+  <p><strong>如果只想写博客，并不想了解更多，或者相应的专业知识比较少，文档的内容可以只看<a href="http://jekyllcn.com/docs/home/">欢迎</a>和<a href="http://jekyllcn.com/docs/structure/">目录结果</a>部分。</strong></p>
+</blockquote>
+
+<h3 class="no_toc" id="开始">开始</h3>
+
+<h4 class="no_toc" id="快速指南">快速指南</h4>
+
+<p><strong><em>建议不要跟着这个部分走，可以直接略过</em></strong></p>
+
+<h4 class="no_toc" id="安装">安装</h4>
+
+<p>安装部分中的“事前要求”部分可能是整个流程中最困难的，中间遇到了一些问题，记录如下。</p>
+
+<ol>
+  <li>ruby的安装（使用linux系统，虚拟机或者双系统都无所谓）
+    <ul>
+      <li>如果使用的是Ubuntu系统，那么系统是自带ruby的，不知道为啥在接下来的步骤中会有问题，在<a href="https://stackoverflow.com/questions/37720892/you-dont-have-write-permissions-for-the-var-lib-gems-2-3-0-directory">这里</a>找到了解决方案。</li>
+      <li>但是需要注意的是，这个答案已经比较老了，不要直接运行 ` rbenv install 2.3.1 ` ，版本太老。当前对应最新的ruby版本可以通过运行 <code class="language-plaintext highlighter-rouge">rbenv install -l</code> 查看。</li>
+    </ul>
+  </li>
+  <li>在现在的版本中，RubyGems已经自带在Ruby中了，不需要独立安装</li>
+  <li>Nodejs在Ubuntu中可以直接使用 ` apt install nodejs ` 进行安装</li>
+  <li>Python直接ubuntu自带</li>
+  <li>最后直接 <code class="language-plaintext highlighter-rouge">gem install jekyll</code> 就行</li>
+</ol>
+
+<h4 class="no_toc" id="基本用法">基本用法</h4>
+
+<p>这个时候你其实已经可以把自己的仓库初始化成一个博客，push上去看一下有没有效果，github会自动的进行build（所以你其实完全可以不在本地配置jekyll）。注意可以在仓库的Actions中看到对应的构建过程，如果出错，可以根据出错信息进行排查。</p>
+
+<blockquote>
+  <p>如果你看了其他的一些教程，你会发现他们可能使用的指令是 <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code>，与官网的有些不同。这是使用了bundle，可能是用来保证gem包的版本不出问题（博主没有接触过ruby，不是十分理解），总之用 <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code> 应该是更好的，不过要配合gemfile使用。</p>
+</blockquote>
+
+<h4 class="no_toc" id="目录结构">目录结构</h4>
+
+<p>重点如下</p>
+
+<ul>
+  <li>_config.yml：是你配置这个博客的一些基本信息的地方</li>
+  <li>_post文件夹：是放你的博文的地方</li>
+</ul>
+
+<p>其他的地方暂时不理解没关系，看到后面会更加理解；如果到后面还不理解，也没关系，照样可以写博客。</p>
+
+<h4 class="no_toc" id="配置">配置</h4>
+
+<p>这里完全看不懂也没关系，不影响使用。</p>
+
+<h3 class="no_toc" id="博客内容">博客内容</h3>
+
+<blockquote>
+  <p>建议先阅读，“撰写博客”，“使用草稿”，“创建页面”这三个部分，其他的部分可以选读，不看也问题不大，遇到问题在来看也可以。</p>
+</blockquote>
+
+<p><strong><em>之后的部分如果不想深入了解jekyll，其实没太大必要继续读，但是读了也许可以帮助你解决很多问题。</em></strong></p>
+
+<h2 id="找到一个喜欢的主题">找到一个喜欢的主题</h2>
+
+<p>现在你已经可以使用默认的模板写一些博文了，但是我们自建博客，肯定是希望能够漂漂亮亮，与众不同的博客，所以我们需要寻找一个好看的主题。</p>
+
+<p>可以通过 <a href="http://jekyllthemes.org/">http://jekyllthemes.org/</a> 查看自己喜欢的主题，也可以直接在GitHub或者其他地方自己寻找。</p>
+
+<h2 id="使用jekyll搭配github-page最简单的方法">使用jekyll搭配Github Page最简单的方法</h2>
+
+<ol>
+  <li>直接下载对应主题的zip包，或者下载他的Github Page的对应仓库sername/username.github.io，解压到自己的对应位置。</li>
+  <li>将_config.yml中的信息内容全部改成自己的对应信息</li>
+  <li>将_post文件夹中的其他人的博客全部删掉</li>
+  <li>【可选】删掉/修改不需要的README.md，doc文件夹，test文件夹等</li>
+  <li>在_post文件夹中写博客就行了，具体方法参考<a href="http://jekyllcn.com/docs/posts/">jekyll文档的撰写博客</a>部分。</li>
+  <li>写完push到自己的GithubPage对应仓库。</li>
+</ol>
+
+<h2 id="总结">总结</h2>
+
+<p>到此，我们已经基本了解了jekyll和对应的GithubPage配置方法，可以开始愉快的写博文了，但是我们还是只能使用他人的主题模板，并且对jekyll只有一个浅层的理解。如果想要对主题进行定制或者魔改，则需要对jekyll有更深入的了解。</p>
+
+<p>下一篇博文我将会以<a href="https://mmistakes.github.io/minimal-mistakes/">minimal-mistakes</a>这个主题为例，介绍一下如何对主题进行定制，同时更加深入的了解jekyll的一些配置和机制。（挖坑。。。。）</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p><a href="http://c.biancheng.net/view/7186.html">C语言教学网</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p><a href="http://jekyllcn.com/docs/home">jekell官方文档</a> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:2:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+  </ol>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 标签: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#github-page" class="page__taxonomy-item" rel="tag">github page</a><span class="sep">, </span>
+    
+      <a href="/tags/#jekyll" class="page__taxonomy-item" rel="tag">jekyll</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 分类: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA" class="page__taxonomy-item" rel="tag">博客搭建</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 更新时间:</strong> <time datetime="2022-04-19T00:00:00+08:00">April 19, 2022</time></p>
+
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/jekyll%20update/welcome-to-jekyll/" class="pagination--pager" title="Welcome to Jekyll!
+">上一页</a>
+    
+    
+      <a href="/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/problem-in-blog/" class="pagination--pager" title="在搭建博客中遇到的问题
+">下一页</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">猜您还喜欢</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%E8%AF%BE%E7%A8%8B/%E9%9A%8F%E6%9C%BA%E4%BF%A1%E5%8F%B7%E5%88%86%E6%9E%90/exercises/" rel="permalink">随机信号分析例题习题
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 分钟阅读
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%E8%AF%BE%E7%A8%8B/%E9%9A%8F%E6%9C%BA%E4%BF%A1%E5%8F%B7%E5%88%86%E6%9E%90/random-single-analysis/" rel="permalink">随机信号分析复习笔记
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          17 分钟阅读
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">这是复习笔记，只记录自己认为的重难点，并不全面，仅供参考。
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/problem-in-blog/" rel="permalink">在搭建博客中遇到的问题
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 分钟阅读
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/jekyll%20update/welcome-to-jekyll/" rel="permalink">Welcome to Jekyll!
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          少于 1 分钟阅读
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different wa...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      输入您要搜索的关键词...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="输入您要搜索的关键词..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>关注:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/ZhaoGY-N" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 ZhaoGuangyu. 技术来自于 <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'zhaogy-n/zhaogy-n.github.io');
+    script.setAttribute('data-repo-id', 'R_kgDOHMaH5Q');
+    script.setAttribute('data-category', 'Announcements');
+    script.setAttribute('data-category-id', 'DIC_kwDOHMaH5c4COp_q');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+  
+
+
+
+
+
+  </body>
+</html>

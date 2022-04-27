@@ -1,0 +1,680 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="zh" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>在搭建博客中遇到的问题 - My Site</title>
+<meta name="description" content="My personal site on github page.">
+
+
+  <meta name="author" content="ZhaoGuangyu">
+  
+  <meta property="article:author" content="ZhaoGuangyu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="My Site">
+<meta property="og:title" content="在搭建博客中遇到的问题">
+<meta property="og:url" content="https://zhaogy-n.github.io//%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/problem-in-blog/">
+
+
+  <meta property="og:description" content="My personal site on github page.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-04-20T00:00:00+08:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://zhaogy-n.github.io//%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/problem-in-blog/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "ZhaoGuangyu",
+      "url": "https://zhaogy-n.github.io//"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">转到主导航栏</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">转到内容</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">转到底部</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          My Site
+          <span class="site-subtitle">personnal notes and thoughs</span>
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">切换搜索</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">切换菜单</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/ProfilePicture.png" alt="ZhaoGuangyu" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">ZhaoGuangyu</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>An ordinary person.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">关注</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Shaanxi Xi'an</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:zhaoguangyu@mail.nwpu.edu.cn" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://zhaogy-n.github.io/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/ZhaoGY-N" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="在搭建博客中遇到的问题">
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="2022-04-20T00:00:00+08:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">在搭建博客中遇到的问题
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 分钟阅读
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <ul id="markdown-toc">
+  <li><a href="#latex无法渲染" id="markdown-toc-latex无法渲染">latex无法渲染</a></li>
+  <li><a href="#kramdown-在latex上的特殊点" id="markdown-toc-kramdown-在latex上的特殊点">kramdown 在latex上的特殊点</a></li>
+  <li><a href="#面包屑导航用中文会乱码" id="markdown-toc-面包屑导航用中文会乱码">面包屑导航用中文会乱码</a></li>
+  <li><a href="#阅读时间不准" id="markdown-toc-阅读时间不准">阅读时间不准</a></li>
+  <li><a href="#latex-无法渲染部分公式" id="markdown-toc-latex-无法渲染部分公式">latex 无法渲染部分公式</a></li>
+</ul>
+
+<h2 id="latex无法渲染">latex无法渲染</h2>
+
+<p>在minimal mistake这个主题中使用的是karmdown进行md的渲染，这个是可以渲染latex的，但是需要手动添加一个mathjax的js库。</p>
+
+<p>可以通过在 <code class="language-plaintext highlighter-rouge">_includes\head\custom.html</code> 中添加一个代码段，并添加对应的liquid模板条件的方式实现在YAML的头文件中添加一个mathjax:true就能实现渲染的功能。详见<a href="https://github.com/mmistakes/minimal-mistakes/issues/735">GitHub issues</a>
+现在这个就能渲染latex了</p>
+
+<blockquote>
+  <p>这个问题在<a href="#latex-无法渲染部分公式">latex渲染问题</a> 中更新了方法</p>
+</blockquote>
+
+\[p_2(y_1,y_2)=p_2(x_1,x_2)\left|\frac{\partial (x_1,x_2)}{\partial(y_1,y_2)}\right|=p_2[h_1(y_1,y_2),h_2(y_1,y_2)]\left|\frac{\partial (x_1,x_2)}{\partial(y_1,y_2)}\right|\\
+\frac{\partial (x_1,x_2)}{\partial(y_1,y_2)}=\left|\begin{matrix} \frac{\partial x_1}{\partial y_1} &amp; \frac{\partial x_1}{\partial y_2}\\ \frac{\partial x_2}{\partial y_1}&amp;\frac{\partial x_2}{\partial y_2}\end{matrix}\right|\]
+
+<h2 id="kramdown-在latex上的特殊点">kramdown 在latex上的特殊点</h2>
+
+<p>kramdwon只能使用两个$$作为公式段的开头和结尾，即使是行内公式也是。同时行间公式必须要在前后各留一行空白，否则还是行内公式。</p>
+
+<h2 id="面包屑导航用中文会乱码">面包屑导航用中文会乱码</h2>
+
+<p>毕竟这是个beta功能，有问题很正常，我有时间去提个issue。</p>
+
+<h2 id="阅读时间不准">阅读时间不准</h2>
+
+<p>直接禁用了，本身也不是很需要这个</p>
+
+<h2 id="latex-无法渲染部分公式">latex 无法渲染部分公式</h2>
+
+<p>latex 渲染使用了MathJax的功能，所以去稍微了解了一下，发现之前latex无法渲染那里的配置其实并不是很好，用了mathjax文档里的，完美解决，现在也可以使用$$作为行内公式了。</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 标签: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA" class="page__taxonomy-item" rel="tag">博客搭建</a><span class="sep">, </span>
+    
+      <a href="/tags/#%E9%97%AE%E9%A2%98" class="page__taxonomy-item" rel="tag">问题</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 分类: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA" class="page__taxonomy-item" rel="tag">博客搭建</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 更新时间:</strong> <time datetime="2022-04-20T00:00:00+08:00">April 20, 2022</time></p>
+
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/jekyll-github-page/" class="pagination--pager" title="使用jekyll依托github page搭建自己的博客
+">上一页</a>
+    
+    
+      <a href="/%E8%AF%BE%E7%A8%8B/%E9%9A%8F%E6%9C%BA%E4%BF%A1%E5%8F%B7%E5%88%86%E6%9E%90/random-single-analysis/" class="pagination--pager" title="随机信号分析复习笔记
+">下一页</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">猜您还喜欢</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%E8%AF%BE%E7%A8%8B/%E9%9A%8F%E6%9C%BA%E4%BF%A1%E5%8F%B7%E5%88%86%E6%9E%90/exercises/" rel="permalink">随机信号分析例题习题
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 分钟阅读
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%E8%AF%BE%E7%A8%8B/%E9%9A%8F%E6%9C%BA%E4%BF%A1%E5%8F%B7%E5%88%86%E6%9E%90/random-single-analysis/" rel="permalink">随机信号分析复习笔记
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          17 分钟阅读
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">这是复习笔记，只记录自己认为的重难点，并不全面，仅供参考。
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/jekyll-github-page/" rel="permalink">使用jekyll依托github page搭建自己的博客
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          10 分钟阅读
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">现在你正在看的这个博客就是使用jekyll搭建在github page上的，并且使用了mmistake主题。下面我将以下几个方面进行简单的介绍。
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/jekyll%20update/welcome-to-jekyll/" rel="permalink">Welcome to Jekyll!
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          少于 1 分钟阅读
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different wa...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      输入您要搜索的关键词...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="输入您要搜索的关键词..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>关注:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/ZhaoGY-N" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 ZhaoGuangyu. 技术来自于 <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'zhaogy-n/zhaogy-n.github.io');
+    script.setAttribute('data-repo-id', 'R_kgDOHMaH5Q');
+    script.setAttribute('data-category', 'Announcements');
+    script.setAttribute('data-category-id', 'DIC_kwDOHMaH5c4COp_q');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+  
+
+
+
+
+
+  </body>
+</html>

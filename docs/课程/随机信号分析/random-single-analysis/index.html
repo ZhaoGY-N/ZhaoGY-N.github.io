@@ -1,0 +1,1214 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="zh" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>随机信号分析复习笔记 - My Site</title>
+<meta name="description" content="这是复习笔记，只记录自己认为的重难点，并不全面，仅供参考。">
+
+
+  <meta name="author" content="ZhaoGuangyu">
+  
+  <meta property="article:author" content="ZhaoGuangyu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="My Site">
+<meta property="og:title" content="随机信号分析复习笔记">
+<meta property="og:url" content="https://zhaogy-n.github.io//%E8%AF%BE%E7%A8%8B/%E9%9A%8F%E6%9C%BA%E4%BF%A1%E5%8F%B7%E5%88%86%E6%9E%90/random-single-analysis/">
+
+
+  <meta property="og:description" content="这是复习笔记，只记录自己认为的重难点，并不全面，仅供参考。">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-04-20T00:00:00+08:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://zhaogy-n.github.io//%E8%AF%BE%E7%A8%8B/%E9%9A%8F%E6%9C%BA%E4%BF%A1%E5%8F%B7%E5%88%86%E6%9E%90/random-single-analysis/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "ZhaoGuangyu",
+      "url": "https://zhaogy-n.github.io//"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">转到主导航栏</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">转到内容</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">转到底部</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          My Site
+          <span class="site-subtitle">personnal notes and thoughs</span>
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">切换搜索</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">切换菜单</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/ProfilePicture.png" alt="ZhaoGuangyu" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">ZhaoGuangyu</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>An ordinary person.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">关注</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Shaanxi Xi'an</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:zhaoguangyu@mail.nwpu.edu.cn" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://zhaogy-n.github.io/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/ZhaoGY-N" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="随机信号分析复习笔记">
+    <meta itemprop="description" content="这是复习笔记，只记录自己认为的重难点，并不全面，仅供参考。">
+    <meta itemprop="datePublished" content="2022-04-20T00:00:00+08:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">随机信号分析复习笔记
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          18 分钟阅读
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>这是复习笔记，只记录自己认为的重难点，并不全面，仅供参考。</p>
+
+<p><span class="heimu" title="你知道的太多了">
+（现在已经考试完了，还有一些知识点没有写，这个坑可能不会再填了，感觉自己复习的还是不够细致，很多都东西没有入脑，打字还是不如写字记得清楚）
+</span></p>
+
+<ul id="markdown-toc">
+  <li><a href="#概念重难点" id="markdown-toc-概念重难点">概念重难点</a>    <ul>
+      <li><a href="#随机变量的变化" id="markdown-toc-随机变量的变化">随机变量的变化</a></li>
+      <li><a href="#随机过程的二维概率分布" id="markdown-toc-随机过程的二维概率分布">随机过程的二维概率分布</a></li>
+      <li><a href="#随机过程的数字特特征" id="markdown-toc-随机过程的数字特特征">随机过程的数字特特征</a>        <ul>
+          <li><a href="#自相关函数二阶混合原点矩随机变量的混合矩" id="markdown-toc-自相关函数二阶混合原点矩随机变量的混合矩">自相关函数——二阶混合原点矩（随机变量的混合矩）</a></li>
+          <li><a href="#协方差混合中心距" id="markdown-toc-协方差混合中心距">协方差——混合中心距</a></li>
+          <li><a href="#自相关函数与协方差和方差的关系" id="markdown-toc-自相关函数与协方差和方差的关系">自相关函数与协方差和方差的关系</a></li>
+          <li><a href="#相关系数归一化协方差" id="markdown-toc-相关系数归一化协方差">相关系数——归一化协方差</a></li>
+          <li><a href="#随机过程两个不同时刻取样值之间的关系" id="markdown-toc-随机过程两个不同时刻取样值之间的关系">随机过程两个不同时刻取样值之间的关系</a></li>
+          <li><a href="#例题中的知识点" id="markdown-toc-例题中的知识点">例题中的知识点</a></li>
+        </ul>
+      </li>
+      <li><a href="#随机变量的特征函数" id="markdown-toc-随机变量的特征函数">随机变量的特征函数</a>        <ul>
+          <li><a href="#定义" id="markdown-toc-定义">定义</a></li>
+          <li><a href="#特征函数的作用" id="markdown-toc-特征函数的作用">特征函数的作用</a></li>
+          <li><a href="#特征函数的性质" id="markdown-toc-特征函数的性质">特征函数的性质</a></li>
+          <li><a href="#随机变量的特征函数与概率密度函数的关系" id="markdown-toc-随机变量的特征函数与概率密度函数的关系">随机变量的特征函数与概率密度函数的关系</a></li>
+          <li><a href="#多维特征函数" id="markdown-toc-多维特征函数">多维特征函数</a></li>
+          <li><a href="#多维特征函数的性质" id="markdown-toc-多维特征函数的性质">多维特征函数的性质</a></li>
+          <li><a href="#n维随机变量的特征函数" id="markdown-toc-n维随机变量的特征函数">N维随机变量的特征函数</a></li>
+        </ul>
+      </li>
+      <li><a href="#随机过程的特征函数" id="markdown-toc-随机过程的特征函数">随机过程的特征函数</a>        <ul>
+          <li><a href="#随机过程的二维特征函数" id="markdown-toc-随机过程的二维特征函数">随机过程的二维特征函数</a></li>
+        </ul>
+      </li>
+      <li><a href="#随机过程的平稳性" id="markdown-toc-随机过程的平稳性">随机过程的平稳性</a>        <ul>
+          <li><a href="#特点" id="markdown-toc-特点">特点</a></li>
+          <li><a href="#分类" id="markdown-toc-分类">分类</a></li>
+          <li><a href="#说明" id="markdown-toc-说明">说明</a></li>
+          <li><a href="#性质" id="markdown-toc-性质">性质</a></li>
+        </ul>
+      </li>
+      <li><a href="#各态历经性" id="markdown-toc-各态历经性">各态历经性</a></li>
+      <li><a href="#随机过程的自相关函数" id="markdown-toc-随机过程的自相关函数">随机过程的自相关函数</a>        <ul>
+          <li><a href="#性质-1" id="markdown-toc-性质-1">性质</a></li>
+          <li><a href="#判断函数是否是相关函数" id="markdown-toc-判断函数是否是相关函数">判断函数是否是相关函数</a></li>
+          <li><a href="#相关系数" id="markdown-toc-相关系数">相关系数</a></li>
+          <li><a href="#相关时间" id="markdown-toc-相关时间">相关时间</a></li>
+        </ul>
+      </li>
+      <li><a href="#互相关函数及其性质" id="markdown-toc-互相关函数及其性质">互相关函数及其性质</a>        <ul>
+          <li><a href="#两个不同的随机过程之间的矩函数" id="markdown-toc-两个不同的随机过程之间的矩函数">两个不同的随机过程之间的矩函数</a></li>
+          <li><a href="#两个不同的随机变量之间的关系" id="markdown-toc-两个不同的随机变量之间的关系">两个不同的随机变量之间的关系</a></li>
+          <li><a href="#互相关函数的性质" id="markdown-toc-互相关函数的性质">互相关函数的性质</a></li>
+          <li><a href="#互相关函数应用的工程实例" id="markdown-toc-互相关函数应用的工程实例">互相关函数应用的工程实例</a></li>
+        </ul>
+      </li>
+      <li><a href="#平稳随机过程的功率谱密度" id="markdown-toc-平稳随机过程的功率谱密度">平稳随机过程的功率谱密度</a>        <ul>
+          <li><a href="#巴萨瓦尔定理" id="markdown-toc-巴萨瓦尔定理">巴萨瓦尔定理</a></li>
+          <li><a href="#功率谱密度的定义" id="markdown-toc-功率谱密度的定义">功率谱密度的定义</a></li>
+          <li><a href="#维纳-辛钦定理" id="markdown-toc-维纳-辛钦定理"><strong>维纳-辛钦定理</strong></a></li>
+          <li><a href="#简单求解法" id="markdown-toc-简单求解法">简单求解法</a></li>
+          <li><a href="#联合平稳随机过程的互谱密度" id="markdown-toc-联合平稳随机过程的互谱密度">联合平稳随机过程的互谱密度</a></li>
+        </ul>
+      </li>
+      <li><a href="#复随机过程" id="markdown-toc-复随机过程">复随机过程</a>        <ul>
+          <li><a href="#实信号的复数表示" id="markdown-toc-实信号的复数表示">实信号的复数表示</a></li>
+          <li><a href="#希尔伯特变换" id="markdown-toc-希尔伯特变换">希尔伯特变换</a></li>
+          <li><a href="#数学期望" id="markdown-toc-数学期望">数学期望</a></li>
+          <li><a href="#方差" id="markdown-toc-方差">方差</a></li>
+          <li><a href="#协方差" id="markdown-toc-协方差">协方差</a></li>
+          <li><a href="#相关函数" id="markdown-toc-相关函数">相关函数</a></li>
+          <li><a href="#功率谱密度" id="markdown-toc-功率谱密度">功率谱密度</a></li>
+          <li><a href="#窄带噪声" id="markdown-toc-窄带噪声">窄带噪声</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#作业中的重要知识点" id="markdown-toc-作业中的重要知识点">作业中的重要知识点</a></li>
+</ul>
+
+<h2 id="概念重难点">概念重难点</h2>
+
+<h3 id="随机变量的变化">随机变量的变化</h3>
+
+<blockquote>
+  <p>这里会出考题，和概率论的类似，求变换后的概率密度，作业题1-22</p>
+</blockquote>
+
+<p>基本做法：使用Y到X的变换关系，求导数，然后带个公式就行了。</p>
+
+\[\begin{gather*}
+x=h(y)\\
+p(y)= \left| \frac{dx}{dy} \right| p(x)= \left| \frac{dx}{dy} \right| p[h(y)]
+\end{gather*}\]
+
+<p>也有一些结论，比如两个<strong>相互独立</strong>的变量的和的概率分布是两个变量的概率分布的卷积（作业1-24）。可以看概率论PPT《随机变量的函数及分布》，<strong>里面有结论及推导</strong>。</p>
+
+<p>难点是多个变量的变换，需要使用雅可比行列式。（作业题1-15）<del>个人感觉不会考这个部分。</del>我也说不准，还是把雅可比矩阵背一下。</p>
+
+\[\begin{gather*}
+p_2(y_1,y_2)=p_2(x_1,x_2)\left|\frac{\partial (x_1,x_2)}{\partial(y_1,y_2)}\right|=p_2[h_1(y_1,y_2),h_2(y_1,y_2)]\left|\frac{\partial (x_1,x_2)}{\partial(y_1,y_2)}\right|\\
+\frac{\partial (x_1,x_2)}{\partial(y_1,y_2)}=\left|\begin{matrix}\frac{\partial x_1}{\partial y_1}\frac{\partial x_1}{\partial y_2}\\\frac{\partial x_2}{\partial y_1}\frac{\partial x_2}{\partial y_2}\end{matrix}\right|
+\end{gather*}\]
+
+<h3 id="随机过程的二维概率分布">随机过程的二维概率分布</h3>
+
+<p>联合分布函数</p>
+
+\[F_2(x_1,x_2;t_1,t_2) = P(X_1\leq x_1,X_2\leq x_2)\]
+
+<blockquote>
+  <p><strong>注意理解</strong>：这里的意思是描述了 \(t_1\) 时刻与 \(t_2\) 时刻的时候，随机过程的相关性，即：在 \(t_1\) 时刻取值可能会影响到 \(t_2\) 时刻的取值，通过看这个函数就能知道具体的影响， \(x_1\) 与 \(x_2\) 这时候相当于是两个随机变量。
+这里也能辅助理解后面相关函数的定义。</p>
+</blockquote>
+
+<h3 id="随机过程的数字特特征">随机过程的数字特特征</h3>
+
+<h4 id="自相关函数二阶混合原点矩随机变量的混合矩">自相关函数——二阶混合原点矩（随机变量的混合矩）</h4>
+
+\[R_x(t_1,t_2) = E[X(t_1) \cdot X(t_2)]\]
+
+<p>没有减去数学期望，包含了<strong>均值和方差对相关程度的影响</strong></p>
+
+<h4 id="协方差混合中心距">协方差——混合中心距</h4>
+
+\[C_X(t_1,t_2)=E\{ \left[ X(t_1)-m_X(t_1) \right]\left[ X(t_2)-m_X(t_2) \right]\}\]
+
+<p>减去了数学期望，反应一个随机过程在不同两个时刻的取值时间的平均关系程度。包含了离散程度对相关程度的影响</p>
+
+<h4 id="自相关函数与协方差和方差的关系">自相关函数与协方差和方差的关系</h4>
+
+<p>当\(t_1=t_2=t\)时
+\(R_X(t,t)=E[X(t)\cdot X(t)]=E[X^2(t)]\) 是均方值。
+\(C_X(t,t)=E\{[X(t)-m_X(t)]^2\}=\sigma^2_X(t)\) 是方差。
+\(\therefore \sigma^2_X(t)=E[X^2(t)]-m^2_X(t)\)</p>
+
+<h4 id="相关系数归一化协方差">相关系数——归一化协方差</h4>
+
+\[r_{xy}=\frac{C_{xy}}{\sigma_x \sigma_y}\]
+
+<blockquote>
+  <p>这个只看到对随机变量的定义，没看到对随机过程的。。。。</p>
+</blockquote>
+
+<h4 id="随机过程两个不同时刻取样值之间的关系">随机过程两个不同时刻取样值之间的关系</h4>
+
+<ol>
+  <li>\(p2(x_1,x_2;t_1,t_2)=p(x_1,t_1)p(x_2,t_2)\)，统计独立</li>
+  <li>\(R_X(t_1,t_2)=0\)，相互正交</li>
+  <li>\(C_X(t_1,t_2)=0\)，互不相关</li>
+</ol>
+
+<blockquote>
+  <p>统计独立一定互不相关，统计不独立可以不相关。独立和相关的关系在概率论中有更详细的描述。
+互不相关在任一随机变量均值为零的时候与相互正交等价。
+统计独立与相互正交没有关系。</p>
+</blockquote>
+
+<h4 id="例题中的知识点">例题中的知识点</h4>
+
+<ol>
+  <li>高斯变量的概率密度由它的数学期望和方差唯一决定。</li>
+  <li>当X与Y为线性关系，它们的相关系数为1，即X与Y是完全相关的。</li>
+  <li>两个互相不独立的随机变量可以是不相关的。
+    <ul>
+      <li>例题中举的例子是 \(\cos\phi\) 与 \(\sin\phi\)，两个变量很显然不是统计独立的，但是他们的相关函数与协方差为\(R_{xy}=E(XY)=E(\sin\phi\cos\phi)\\C_{xy}=E[(X-m_x)(Y-m_y)]=E(XY)=0\) 很显然二者正交且不相关。</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="随机变量的特征函数">随机变量的特征函数</h3>
+
+<h4 id="定义">定义</h4>
+<p>离散随机变量的特征函数的定义：</p>
+
+\[\Phi_x(\omega)=E[e^{j\omega X}]=\sum^\infty_{k=1} [e^{j\omega x_k} \cdot p(x_k)]\]
+
+<p>连续随机变量的特征函数的定义：</p>
+
+\[\Phi_x(\omega)=E[e^{j\omega X}] = E(\cos \omega X+j\sin \omega X)=\int^\infty_{-\infty} e^{j\omega x} p(x) d x\]
+
+<h4 id="特征函数的作用">特征函数的作用</h4>
+
+<ol>
+  <li>已知一个随时变量的特征函数，可以使用傅里叶变换得到其概率密度函数。</li>
+  <li>可以确定随机变量经过某种变换之后的概率密度函数
+    <blockquote>
+      <p><a href="../exercises/#随机变量的特征函数例题1">例题</a>：
+本质上也是利用了随机变量函数的概率密度，直接套那个公式好像也是可以的。</p>
+    </blockquote>
+  </li>
+  <li>求矩函数、求高阶原点矩
+    <blockquote>
+\[\begin{gather*}
+ \Phi_x(\omega)=\sum_{k=0}^\infty \frac{\omega^k}{k!}\cdot\left.\frac{d^k\Phi_x(\omega)}{d\omega^k}\right|_{\omega=0}=\sum_{k=0}^\infty\frac{(j\omega)^k}{k!} E(X^k)\\
+ E(X^k)=(-j)^k\frac{d^k\Phi_x(\omega)}{d\omega^k}\left.\right|_{\omega=0}
+ \end{gather*}\]
+    </blockquote>
+
+    <blockquote>
+      <p>详细过程见PPT，神来之笔是令 \(\omega = 0\) 。
+由此可得据矩函数与对应的特征函数之间的关系</p>
+    </blockquote>
+  </li>
+</ol>
+
+<h4 id="特征函数的性质">特征函数的性质</h4>
+
+<ol>
+  <li>\(\Phi_x(\omega)\) 总是存在的。</li>
+  <li>
+    <p>线性定理</p>
+
+\[\begin{gather*}
+ Y=g(X)=aX+b\\
+ \Phi_Y(\omega)=\Phi_x(a\omega)e^{j\omega b}
+ \end{gather*}\]
+  </li>
+  <li>
+    <p>如果随机变量 \(M_1\) 与 \(M_2\) 统计独立，则对于 \(Y=X_1+X_2\) 的变换，其特征函数为</p>
+
+\[\Phi_Y(\omega)=\Phi_1(\omega)\Phi_2(\omega)\]
+
+    <blockquote>
+      <p>对于两相互独立的随机变量的和来说，其概率密度函数为 \(p(y)=p(x_1) \ast p(x_2)\) ，由于概率密度与特征函数互为傅里叶变换，则该结论就很容易理解了。</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>推论1：独立分布的随机变量之和的特征函数为各随机变量特征函数之积</p>
+
+\[\Phi_(\omega)=\Phi_1(\omega)\Phi_2(\omega)...\Phi_n(\omega) = \prod_{k=1}^n\Phi_k(\omega)\]
+  </li>
+  <li>
+    <p>推论2：独立分布随机变量之和的概率密度函数是各自概率密度函数的卷积</p>
+
+\[p(\omega)=p_1(x_1)\ast p_2(x_2)\ast ...\ast p_n(x_n)\]
+
+    <blockquote>
+      <p>例题 <a href="../exercises/#随机变量的特征函数例题2">随机变量的特征函数例题2</a></p>
+    </blockquote>
+  </li>
+</ol>
+
+<h4 id="随机变量的特征函数与概率密度函数的关系">随机变量的特征函数与概率密度函数的关系</h4>
+
+\[p(x) = \frac{1}{2\pi} \int^\infty_{-\infty}\Phi_x(\omega)e^{-j\omega X}d \omega\]
+
+<p>即，二者为傅里叶变换对</p>
+
+\[p(x) \stackrel{\mathcal{F}} \longleftrightarrow \Phi_x(\omega)\]
+
+<h4 id="多维特征函数">多维特征函数</h4>
+
+\[\begin{gather*}
+\Phi_{x_1x_2}(\omega_1,\omega_2)=E[e^{j\omega X_1+j\omega X_2}]=\int^\infty_{-\infty}\int^\infty_{-\infty} p_2(x_1,x_2)e^{j\omega_1 X_1+j\omega_2 X_2} dx_1 dx_2\\
+p_x(x_1,x_2)=\frac{1}{2\pi}\int^\infty_{-\infty}\int^\infty_{-\infty}\Phi_{x1x_2}(\omega_1,\omega_2)e^{-j\omega_1 X_1-j\omega_2 X_2}d\omega_1 d\omega_2
+\end{gather*}\]
+
+<h4 id="多维特征函数的性质">多维特征函数的性质</h4>
+
+<ol>
+  <li>随机变量 \(X_1\) 和 \(X_2\)统计独立的充分必要条件为： \(\Phi_{x_1,x_2}(\omega_1,\omega_2) = \Phi_{x_1}(\omega_1)\Phi_{x_2}(\omega_2)\)</li>
+  <li>二维特征函数在 \((\omega_1,\omega_2)\) 二维实平面上一致连续</li>
+  <li>二维特征函数包含了一维特征函数的信息
+    <blockquote>
+\[\Phi_{x_1}(\omega_1) = \Phi_{x_1x_2}(\omega_1,0)
+ \Phi_{x_2}(\omega_2) = \Phi_{x_1x_2}(0,\omega_2)\]
+    </blockquote>
+  </li>
+</ol>
+
+<h4 id="n维随机变量的特征函数">N维随机变量的特征函数</h4>
+
+<p><img src="/assets/images/posts/schoolClasses/randomSingleAnalysis/Snipaste_2022-04-24_15-12-25.png" alt="N维变量的特征函数" /></p>
+
+<h3 id="随机过程的特征函数">随机过程的特征函数</h3>
+
+<p>和随机变量相比只是在函数中增加了一个t，计算过程以及性质都是一样的，不在赘述。</p>
+
+<h4 id="随机过程的二维特征函数">随机过程的二维特征函数</h4>
+
+<p>和二维随机变量的特征函数类似，详见图。
+<img src="/assets/images/posts/schoolClasses/randomSingleAnalysis/Snipaste_2022-04-24_15-20-55.png" alt="图片" /></p>
+
+<p><strong>将二维特征函数对变量 \(\omega\) 求偏导 \(n\) 次，可得 \(n\) 阶<em>混合原点</em>矩函数</strong></p>
+
+<p><strong>则其自相关函数为</strong></p>
+
+\[R_x(t_1,t_2)=\int^\infty_{-\infty}\int^\infty_{-\infty}x_1 x_2 p_2(x_1,x_2;t_1,t_2)dx_1 dx_2 = -\frac{\partial^2\Phi(\omega_1,\omega_2;t_1,t_2)}{\partial\omega_1\partial\omega_2}\left.\right|_{\omega_1\omega-2=0}\]
+
+<h3 id="随机过程的平稳性">随机过程的平稳性</h3>
+
+<h4 id="特点">特点</h4>
+
+<p>统计特性（概率，矩）不随时间的平移而变化</p>
+
+<h4 id="分类">分类</h4>
+
+<ol>
+  <li>狭义平稳随机过程（严格平稳）：任意n维概率分布不随时间的平移而变化
+    <ul>
+      <li>由同分布的随机变量组成</li>
+    </ul>
+  </li>
+  <li>广义平稳：矩函数不随时间的平移而变化，数学期望 \(E[X(t)]=m_X=C\) 不随时间发生变化，自相关函数 \(R_X(t_1,t_2)=R_X(\tau)\) 只与时间间隔相关。
+    <ul>
+      <li>可以用矩的方法判断广义平稳，严格平稳则必须使用概率密度判断</li>
+      <li>严格平稳必定为广义平稳，反之未必成立</li>
+      <li>对于正态过程，广义平稳一定严格平稳（其分布只与均值和方差有关）</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="说明">说明</h4>
+
+<ol>
+  <li>平稳性是随机信号的随机特性对于参量（组）的移动不变性，即平稳随机信号的测试不受观察时刻的影响</li>
+  <li>应用于研究最多的平稳信号是广义平稳信号</li>
+  <li>严格平稳信号因要求太“苛刻”，更多的用于理论研究之中</li>
+  <li>经验判据：如果产生于影响随机信号的主要物理条件不改变，那么通常可以认为此信号是平稳的</li>
+  <li>非平稳信号：在较短的时间段内可以认为是一个平稳信号</li>
+</ol>
+
+<h4 id="性质">性质</h4>
+
+<ul>
+  <li>彼此统计独立的平稳随机过程，它们乘积的均值和自相关函数等于各个随机过程的均值和自相关函数的乘积，所以广义平稳过程的成绩也是广义平稳过程。</li>
+  <li>平稳周期性随机过程的自相关函数也满足周期性。</li>
+</ul>
+
+<h3 id="各态历经性">各态历经性</h3>
+
+<p>如果平稳随机过程的均值和自相关函数具有各态历经性，则称该过程为<strong>各态历经过程</strong>，或者是<strong>遍历</strong>的</p>
+
+<h3 id="随机过程的自相关函数">随机过程的自相关函数</h3>
+
+<p>注意一下各种周期与相加的相关函数的图像
+<img src="https://zhaogy-n.github.io/\assets\images\posts\schoolClasses\randomSingleAnalysis\Snipaste_2022-04-25_15-56-29.png" alt="图片" /></p>
+
+<h4 id="性质-1">性质</h4>
+
+\[\begin{gather*}
+R_X(t_1,t_2)=C_X(t_1,t_2)+m_X(t_1)m_X(t_2)\\
+C_X(\tau)=R_X(\tau)-m^2_X\\
+C_X(0)=\sigma_x^2
+\end{gather*}\]
+
+\[\begin{gather*}
+R_X(0)=E[X^2(t)]\geq 0\\
+R_X(\tau)=R_X(-\tau),C_X(\tau)=C_X(-\tau)\\
+R_X(0) \geq |R_X(\tau)|
+\end{gather*}\]
+
+<p>若<strong>平稳随机过程</strong>不含周期分量，则有</p>
+
+\[R_x(\infty)=\lim_{|\tau|\rightarrow\infty} R_x(\tau) = m_x^2  C_x(\infty)=0\]
+
+<p>注意这样得到的数学期望会有一个正负号，两个都是合理的。</p>
+
+<p><strong>平稳随机过程</strong>的自相关函数的傅里叶变量是非负数</p>
+
+<h4 id="判断函数是否是相关函数">判断函数是否是相关函数</h4>
+
+<ol>
+  <li>对称性</li>
+  <li>连续性（）</li>
+  <li>0处取得最大值</li>
+</ol>
+
+<h4 id="相关系数">相关系数</h4>
+
+<p>相关系数是归一化处理后的自相关函数</p>
+
+\[r_x(\tau)=\frac{R_x(\tau)-R_x(\infty)}{R_x(0)-R_x(\infty)}=\frac{C_x(\tau)}{C_x(0)}=\frac{C_x(\tau)}{\sigma_x^2}\]
+
+<p><img src="https://zhaogy-n.github.io/\assets\images\posts\schoolClasses\randomSingleAnalysis\Snipaste_2022-04-25_21-00-06.png" alt="图片" /></p>
+
+<h4 id="相关时间">相关时间</h4>
+
+<p><strong>相关系数</strong>降至5%所用的时间被称为相关时间</p>
+
+<p>或者 \(\tau_0 = \int^\infty_0 r_x(\tau)d\tau\) ，等效为一个矩形</p>
+
+<p>两种定义一般得到的值不同</p>
+
+<blockquote>
+  <p>注意这里是相关系数，是已经归一化之后的，所以矩形的高度一定是1。</p>
+</blockquote>
+
+<h3 id="互相关函数及其性质">互相关函数及其性质</h3>
+
+<h4 class="no_toc" id="两个不同的随机过程之间的联合概率密度函数">两个不同的随机过程之间的联合概率密度函数</h4>
+<p>没太看懂，但是PPT只有一页，课本篇幅也不大，暂时略过</p>
+
+<h4 id="两个不同的随机过程之间的矩函数">两个不同的随机过程之间的矩函数</h4>
+
+<ol>
+  <li>互相关函数 \(R_{XY} = E[X(t_1)Y(t_2)]=\int^\infty_{-\infty}\int^\infty_{-\infty} xyp_2(x,y;t_1,t_2)dxdy\)</li>
+  <li>互协方差函数 \(C_{XY}=E \left\{ [X(t_1)-m_X(t_1)] [Y(t_2)-m_Y(t_2)] \right\}\)</li>
+  <li>互相关系数 \(r_{XY}(t_1,t_2)=\frac{C_{XY}(t_1,t_2)}{\sqrt{\sigma_X^2\sigma_Y^2}}\)</li>
+</ol>
+
+<blockquote>
+  <p>取自己的 \(t_1\) 再取其他的随机过程的 \(t_2\)</p>
+</blockquote>
+
+<h4 id="两个不同的随机变量之间的关系">两个不同的随机变量之间的关系</h4>
+
+<ol>
+  <li>平稳相依（严格联合平稳）： \(P_{m+n}\) （联合概率密度函数）不随<strong>起点时间</strong>变化</li>
+  <li>联合平稳（广义）：
+    <ol>
+      <li>\(X(t),Y(t)\) 各自是广义平稳过程</li>
+      <li>它们的互相关函数仅是时间间隔 \(\tau = t_2 - t_1\) 的单变量随机函数，即 \(R_{XY}(t_1,t_2) = R_{XY}(\tau)\)</li>
+      <li>则称随机过程 \(X(t),Y(t)\) 宽平稳相关，简称联合平稳</li>
+    </ol>
+  </li>
+  <li>各态历经性：当随机过程 \(X(t),Y(t)\) 联合平稳时，若 $ \left&lt;X(t)Y(t)\right&gt; \xlongequal{P} \overline{X(t)Y(t+\tau)}  $</li>
+  <li>独立性： $P_{m+n}(\cdots)=P_n(\cdots)P_m(\cdots)$，统计独立</li>
+  <li>不相关： $R_{XY}(\tau)=\text{常数},C_{XY}(t)=0,r_{xy}(t)=0$ ，则称为不相关
+    <ul>
+      <li>判断条件：$R_{XY}=E[X(t)Y(t_\tau)]=m_Xm_y $</li>
+      <li>或 $E[X(t)Y(t+\tau)]=E[X(t)]\cdot E[Y(t+\tau)] $</li>
+    </ul>
+  </li>
+  <li>正交性：若对于任意的 $\tau$ 都有，$R_{XY}(\tau)=0,C_{XY}(\tau)=-m_X m_Y $，则正交</li>
+</ol>
+
+<h4 id="互相关函数的性质">互相关函数的性质</h4>
+
+<ol>
+  <li>$R_{XY}(\tau) = R_{YX}(-\tau) \quad R_{XY}(0)=R_{YX}(0) \quad C_{XY}(\tau)=C_{YX}(-\tau)$ <img src="https://zhaogy-n.github.io/\assets\images\posts\schoolClasses\randomSingleAnalysis\Snipaste_2022-04-25_23-01-38.png" alt="图片" /></li>
+  <li><img src="https://zhaogy-n.github.io/\assets\images\posts\schoolClasses\randomSingleAnalysis\Snipaste_2022-04-25_23-03-02.png" alt="图片" /></li>
+  <li><img src="https://zhaogy-n.github.io/\assets\images\posts\schoolClasses\randomSingleAnalysis\Snipaste_2022-04-25_23-05-26.png" alt="图片" /></li>
+</ol>
+
+<h4 id="互相关函数应用的工程实例">互相关函数应用的工程实例</h4>
+
+<p>互相关接收器</p>
+
+<h3 id="平稳随机过程的功率谱密度">平稳随机过程的功率谱密度</h3>
+
+<ol>
+  <li>能量信号：能量有限，持续时间有限（非周期），平均功率为零</li>
+  <li>功率信号：能量趋于无穷，平均功率有限（周期性信号或随机信号）
+    <blockquote>
+      <p>一个信号可以既不是能量型信号，也不是功率型信号，但是不可能既是能量型信号又是功率型信号</p>
+    </blockquote>
+  </li>
+</ol>
+
+<h4 id="巴萨瓦尔定理">巴萨瓦尔定理</h4>
+
+\[E=\int^\infty_{-\infty}|s(t)|^2dt=\frac{1}{2\pi}\int^\infty_{-\infty}|S(\omega)|^2d\omega\]
+
+<p>总能量等于各频谱分量能量之和</p>
+
+<p>或者说：一个信号所含的能量（功率）恒等于此信号在完备正交函数集中各分量能量（功率）之和</p>
+
+<h4 id="功率谱密度的定义">功率谱密度的定义</h4>
+
+<p>将样本信号截短，宽度为T，使其变成能量有限性信号，则可进行傅里叶变换。</p>
+
+<p>经过推导可得</p>
+
+\[G_X(\omega)=E\left[\lim_{T\rightarrow\infty}\frac{|X_T(\omega)|^2}{T}\right]\]
+
+<h4 id="维纳-辛钦定理"><strong>维纳-辛钦定理</strong></h4>
+
+\[R_X(\tau)\stackrel{\mathcal{F}} \longleftrightarrow G_X(\omega)\]
+
+<p>自相关函数的傅里叶变换是功率谱密度。</p>
+
+\[R_X(\tau)=\frac{1}{2\pi}\int_{-\infty}^\infty G_X(\omega)e^{j\omega\tau}d\omega\]
+
+<p>注意一下几点问题：</p>
+<ol>
+  <li>
+    <p>又傅里叶变换可知，时域信号 $R_X(\tau)$ 必须满足以下绝对可积条件</p>
+
+\[\int^{\infty}_{-\infty}|R_x(\tau)|d\tau&lt;\infty \quad \int^{\infty}_{-\infty}|G_x(\omega)|d\omega&lt;\infty\]
+  </li>
+  <li>维纳-辛钦定理进对<strong>平稳过程</strong>的相关函数$R_X(\tau)$才有用</li>
+  <li>功率谱密度为自相关函数的傅里叶变换，包含$R_X(\tau)$中的所有全部信息</li>
+  <li>功率谱密度反应信号的频域结构，这一点与幅度谱相似，但是自功率谱密度所反应的是信号幅制的平方，因此频域结构更加明显</li>
+</ol>
+
+<h4 id="简单求解法">简单求解法</h4>
+
+<p>利用$G_X$是一个实偶函数的特点</p>
+
+\[\begin{gather*}
+\left.
+\begin{array}
+G_X(\omega) = 2\int^\infty_0 R_x(\tau)\cos\omega\tau d\tau \\
+R_x(\tau)=\frac{1}{\pi}\int^\infty_0 G_X(\omega\tau) \cos\omega\tau d\omega\\
+\end{array}
+\right\}\text{注意这里两个cos都是正的}\\
+F_x(\omega)=2G_x(\omega)\quad \omega&gt;0
+\end{gather*}\]
+
+<h4 id="联合平稳随机过程的互谱密度">联合平稳随机过程的互谱密度</h4>
+
+<p><img src="https://zhaogy-n.github.io/\assets\images\posts\schoolClasses\randomSingleAnalysis\Snipaste_2022-04-26_17-15-49.png" alt="图片" /></p>
+
+<h3 id="复随机过程">复随机过程</h3>
+
+<h4 id="实信号的复数表示">实信号的复数表示</h4>
+
+<p>将窄带信号的载波频率与信号通过三角函数进行分离</p>
+
+<p>实信号：$s(t)=a_x(t)cos[\omega_0(t)+\phi_x(t)]$</p>
+
+<p>实信号经过和差化积：$s(t)=s_I(t)\cos(\omega_0 t)-s_Q(t)\sin(\omega_0 t)$</p>
+
+<p>复信号：$\tilde{s}(t)=s(t)+j\hat{s}(t)$</p>
+
+<h4 id="希尔伯特变换">希尔伯特变换</h4>
+
+\[\hat{s}(t)=s(t)\otimes\frac{1}{\pi t}=H[s(t)]\]
+
+<p>公式重点记住$\frac{1}{\pi t}$</p>
+
+<h4 id="数学期望">数学期望</h4>
+
+<p>分别是实部的数学期望以及虚部的数学期望</p>
+
+<h4 id="方差">方差</h4>
+
+\[D[Z]=D[X]+D[Y]=E[\mathring{X^2}]-E[\mathring{Y^2}]+E[2j\mathring{X}\mathring{Y}]\]
+
+<h4 id="协方差">协方差</h4>
+
+\[C_{Z_1 Z_2}=C_{X_1 X_2}+C_{Y_1 Y_2}+j[C_{X_1 Y_2}-C_{Y_1 X_2}]\]
+
+<h4 id="相关函数">相关函数</h4>
+
+\[\begin{gather*}
+R_{X\hat{X}}(\tau)=-R_{X\hat{X}}(-\tau)\\
+R_{X\hat{X}}(\tau)=R_{\hat{X}X}(-\tau)
+\end{gather*}\]
+
+<h4 id="功率谱密度">功率谱密度</h4>
+
+\[\begin{gather*}
+G_{\tilde{X}}(\omega)=\left\{ \begin{array} \text{4} G_X(\omega) \quad \omega&gt;0 \\0 \quad \omega&lt;0\end{array} \right.
+\end{gather*}\]
+
+<h4 id="窄带噪声">窄带噪声</h4>
+
+<p>若白噪声（宽带）通过一个带通滤波器（窄带），且$\frac{\Delta\omega}{\omega_0}\gtrless 1$，则此噪声成为一个窄带噪声，这种窄带噪声成为窄带随机过程或窄带过程</p>
+
+<p>窄带随机过程<strong>幅值的分布</strong>为<strong>正态分布</strong></p>
+
+<p>自相关函数实部与虚部相等。</p>
+
+<p><img src="https://zhaogy-n.github.io/\assets\images\posts\schoolClasses\randomSingleAnalysis\Snipaste_2022-04-26_23-01-41.png" alt="图片" /></p>
+
+<h2 id="作业中的重要知识点">作业中的重要知识点</h2>
+
+<ol>
+  <li>正态分布的公式一定要记清。</li>
+</ol>
+
+\[\begin{gather*}
+x\sim N(m,\sigma^2)\\
+p(x) = \frac{1}{\sqrt{2\pi}\sigma}\exp\left[-\frac{(x-m)^2}{2\sigma^2}\right]
+\end{gather*}\]
+
+<p><strong>注意负号</strong></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 标签: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0" class="page__taxonomy-item" rel="tag">复习笔记</a><span class="sep">, </span>
+    
+      <a href="/tags/#%E9%9A%8F%E6%9C%BA%E4%BF%A1%E5%8F%B7%E5%88%86%E6%9E%90" class="page__taxonomy-item" rel="tag">随机信号分析</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 分类: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#%E8%AF%BE%E7%A8%8B" class="page__taxonomy-item" rel="tag">课程</a><span class="sep">, </span>
+    
+      <a href="/categories/#%E9%9A%8F%E6%9C%BA%E4%BF%A1%E5%8F%B7%E5%88%86%E6%9E%90" class="page__taxonomy-item" rel="tag">随机信号分析</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 更新时间:</strong> <time datetime="2022-04-20T00:00:00+08:00">April 20, 2022</time></p>
+
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/problem-in-blog/" class="pagination--pager" title="在搭建博客中遇到的问题
+">上一页</a>
+    
+    
+      <a href="/%E8%AF%BE%E7%A8%8B/%E9%9A%8F%E6%9C%BA%E4%BF%A1%E5%8F%B7%E5%88%86%E6%9E%90/exercises/" class="pagination--pager" title="随机信号分析例题习题
+">下一页</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">猜您还喜欢</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%E8%AF%BE%E7%A8%8B/%E9%9A%8F%E6%9C%BA%E4%BF%A1%E5%8F%B7%E5%88%86%E6%9E%90/exercises/" rel="permalink">随机信号分析例题习题
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 分钟阅读
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/problem-in-blog/" rel="permalink">在搭建博客中遇到的问题
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 分钟阅读
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/jekyll-github-page/" rel="permalink">使用jekyll依托github page搭建自己的博客
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          10 分钟阅读
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">现在你正在看的这个博客就是使用jekyll搭建在github page上的，并且使用了mmistake主题。下面我将以下几个方面进行简单的介绍。
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/jekyll%20update/welcome-to-jekyll/" rel="permalink">Welcome to Jekyll!
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          少于 1 分钟阅读
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different wa...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      输入您要搜索的关键词...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="输入您要搜索的关键词..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>关注:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/ZhaoGY-N" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 ZhaoGuangyu. 技术来自于 <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'zhaogy-n/zhaogy-n.github.io');
+    script.setAttribute('data-repo-id', 'R_kgDOHMaH5Q');
+    script.setAttribute('data-category', 'Announcements');
+    script.setAttribute('data-category-id', 'DIC_kwDOHMaH5c4COp_q');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+  
+
+
+
+
+
+  </body>
+</html>
