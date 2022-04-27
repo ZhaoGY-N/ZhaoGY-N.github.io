@@ -28,4 +28,10 @@ var store = [{
         "tags": ["随机信号分析","习题"],
         "url": "/%E8%AF%BE%E7%A8%8B/%E9%9A%8F%E6%9C%BA%E4%BF%A1%E5%8F%B7%E5%88%86%E6%9E%90/exercises/",
         "teaser": null
+      },{
+        "title": "卫星通信复习记录",
+        "excerpt":"卫星通信的复习笔记，只有两天的时间复习了，不会很详细的  ","categories": ["课程","卫星通信"],
+        "tags": ["卫星通信","复习"],
+        "url": "/%E8%AF%BE%E7%A8%8B/%E5%8D%AB%E6%98%9F%E9%80%9A%E4%BF%A1/satelliteCom/",
+        "teaser": null
       }]
