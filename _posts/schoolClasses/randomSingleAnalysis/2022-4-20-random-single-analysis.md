@@ -11,7 +11,9 @@ mathjax: true
 
 这是复习笔记，只记录自己认为的重难点，并不全面，仅供参考。
 
+<span class="heimu" title="你知道的太多了">
 （现在已经考试完了，还有一些知识点没有写，这个坑可能不会再填了，感觉自己复习的还是不够细致，很多都东西没有入脑，打字还是不如写字记得清楚）
+</span>
 
 - this will be replaced by a toc
 {:toc}
@@ -203,7 +205,7 @@ $$
 
 #### N维随机变量的特征函数
 
-![N维变量的特征函数]({{ site.url }}{{ site.baseurl }}\assets\images\posts\schoolClasses\randomSingleAnalysis\Snipaste_2022-04-24_15-12-25.png)
+![N维变量的特征函数]({% link /assets/images/posts/schoolClasses/randomSingleAnalysis/Snipaste_2022-04-24_15-12-25.png %})
 
 ### 随机过程的特征函数
 
@@ -212,7 +214,7 @@ $$
 #### 随机过程的二维特征函数
 
 和二维随机变量的特征函数类似，详见图。
-![图片]({{ site.url }}{{ site.baseurl }}\assets\images\posts\schoolClasses\randomSingleAnalysis\Snipaste_2022-04-24_15-20-55.png)
+![图片]({% link /assets/images/posts/schoolClasses/randomSingleAnalysis/Snipaste_2022-04-24_15-20-55.png %})
 
 **将二维特征函数对变量 $$\omega$$ 求偏导 $$n$$ 次，可得 $$n$$ 阶*混合原点*矩函数**
 
